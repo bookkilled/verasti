@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 221">
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#989AAE" d="M179 7h1v12h-1V7zm5 7h1v5h-1v-5zm5-4h1v9h-1v-9zM47 135h79v1H47v-1zm0 20h79v1H47v-1zm0-30h79v1H47v-1zm0 20h79v1H47v-1zm0-30h79v1H47v-1zm0 25h79v1H47v-1zm0-30h79v1H47v-1zm0 50h79v1H47v-1zm0-30h79v1H47v-1zm0 20h79v1H47v-1zm0-30h79v1H47v-1zm0-55h79v1H47v-1zm0 5h79v1H47v-1zm0 5h79v1H47v-1zm0 10h79v1H47v-1zm0-5h79v1H47v-1zm0 10h79v1H47v-1zM146 102h47v1h-47v-1zm0 20h47v1h-47v-1zm0-30h47v1h-47v-1zm0 20h47v1h-47v-1zm0-30h47v1h-47v-1zm0 25h47v1h-47v-1zm0-30h47v1h-47v-1zm0 50h47v1h-47v-1zm0-30h47v1h-47v-1zm0 20h47v1h-47v-1zm30 30h10.2v1H176v-1zm0 5h10.2v1H176v-1zm0-10h10.2v1H176v-1zm-30-55h47v1h-47v-1zm0-55h47v1h-47v-1zm0 5h47v1h-47v-1zm0 5h47v1h-47v-1zm0 10h47v1h-47v-1zm0 15h47v1h-47v-1zm0-20h47v1h-47v-1zm0 15h47v1h-47v-1zm0-5h47v1h-47v-1zm0 15h47v1h-47v-1z"/>
+    <ellipse cx="14" cy="13" stroke="#989AAE" rx="4" ry="4"/>
+    <ellipse cx="26" cy="13" stroke="#989AAE" rx="4" ry="4"/>
+    <ellipse cx="38" cy="13" stroke="#989AAE" rx="4" ry="4"/>
+    <path stroke="#989AAE" d="M.5.5h199v25H.5V.5zM.5 25.5h199v195H.5z"/>
+    <path stroke="#989AAE" d="M.5 169.5h199v51H.5v-51zM139.5 25.5h60v144h-60zM41.5 105.5h90v55h-90zM41.5 60.5h90v35h-90z"/>
+    <path stroke="#989AAE" d="M146.5 132.5h46v30h-46z"/>
+    <g transform="translate(151 137)">
+      <circle cx="10.5" cy="10.5" r="10.5" stroke="#989AAE"/>
+      <path fill="#989AAE" d="M10 0h1v10h-1zM21 10v1H10v-1z"/>
+    </g>
+    <path stroke="#989AAE" d="M99.5 181.5h90v29h-90z"/>
+    <path fill="#989AAE" d="M105 198h79v1h-79zM105 188h79v1h-79zM105 203h79v1h-79zM105 193h79v1h-79z"/>
+    <path stroke="#989AAE" d="M9.5 185.5h10v25h-10zM28.5 195.5h10v15h-10zM47.5 179.5h10v31h-10zM66.5 195.5h10v15h-10zM41.5 45.5h42v5h-42v-5zM41.5 35.5h42v5h-42v-5zM89.5 45.5h42v5h-42v-5zM89.5 35.5h42v5h-42v-5z"/>
+    <path fill="#989AAE" d="M6 34h1v127H6zM11 34h1v127h-1zM16 34h1v127h-1zM21 34h1v127h-1zM26 34h1v71.4h-1zM31 34h1v71.4h-1zM36 34h1v71.4h-1z"/>
+  </g>
+</svg>
