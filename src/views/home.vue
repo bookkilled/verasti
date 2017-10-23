@@ -23,7 +23,7 @@
         <div class="row content text-center">
           <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".2s">advantage<br><small class="txt-white">优势</small>
           </h1>
-          <div class="advantagebox">
+          <div class="advantagebox" v-if="pcsite">
             <div class="boxt wow fadeInLeft" data-wow-delay=".2s">
               <p class="tit">高效灵活</p>
               <p class="dt">通过统一API接入，对各交易平台的适配，高效灵活，支持中后台各类业务系统部署</p>
@@ -37,11 +37,27 @@
               <p class="dt">对交易型私募基金来说，VERASTI构建了一个安全，稳定地链接金融机构和交易型私募基金的网络</p>
             </div>
           </div>
+          <div class="advantagebox" v-else>
+            <p class="wow fadeInLeft" data-wow-delay=".2s" style="text-align:center"><img src="../../static/img/cap_img_pc.jpg" width="33%"></p>
+            <div class="wow fadeInLeft" data-wow-delay=".2s">
+              <p class="tit">高效灵活</p>
+              <p class="dt">通过统一API接入，对各交易平台的适配，高效灵活，支持中后台各类业务系统部署</p>
+              <p class="tit">统一合规风控</p>
+              <p class="dt">统一的风控合规系统部署在策略程序和柜台系统之间，实时监测包括流量，大单等异常情况，将风险降低到最低</p>
+            </div>
+            <p class="wow fadeInRight" data-wow-delay=".2s"  style="text-align:center"><img src="../../static/img/cap_img_mac.jpg" width="33%"></p>
+            <div class="wow fadeInRight" data-wow-delay=".2s" >
+              <p class="tit">匹配各方网络</p>
+              <p class="dt">全网匹配专业化的证券及衍生品交易，支持多节点模块部署，支持模块无缝热插拨</p>
+              <p class="tit">跨市场交易统一入口</p>
+              <p class="dt">对交易型私募基金来说，VERASTI构建了一个安全，稳定地链接金融机构和交易型私募基金的网络</p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="arrow-down"></div>
     </section>
-    <section id="risk" class="risk">
+    <section id="risk" class="risk" v-if="pcsite">
       <div class="container">
         <div class="row content text-center">
           <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".2s">memorabilia<br><small class="txt-white">公司大事记</small>
@@ -52,7 +68,7 @@
               <div class="ndetail">
                 <p class="p1">{{ el.title }}</p>
                 <p class="p2">{{ el.summary }}</p>
-                <a class="link" href="javascript:;" @click="gourl(index)">查看全部</a>
+                <a class="link" v-bind:href="'/newsdetail?pageid='+el.id">查看全部</a>
               </div>
             </div>
             <!-- <div class="itemb item">
@@ -60,7 +76,7 @@
               <div class="ndetail">
                 <p class="p1">VERASTI亮相2017全球（上海）人工智能创新峰会</p>
                 <p class="p2">在国家重磅的监管之下，如何防范合规风险的基础上高效完成基金募......</p>
-                <a class="link" href="javascript:;" @click="gourl(index)">查看全部</a>
+                <a class="link" href="/news/">查看全部</a>
               </div>
             </div> -->
             <div class="itemc item">
@@ -71,12 +87,27 @@
       </div>
       <div class="arrow-down"></div>
     </section>
+    <section class="newsbox" style="background: #193044" v-else>
+        <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".2s">MEMORABILIA<br><small class="txt-white">公司大事记</small>
+        </h1>
+        <div class="mitem" v-for="(el,index) in newsList" :key="index">
+            <div v-bind:class="['mline',(index == 0 ? 'first' : '')]"></div>
+            <span class="mpointer"></span>
+            <p class="mdate">{{ el.postDate }}</p>
+            <p class="mtit">{{ el.title }}</p>
+            <p class="msummary">{{ el.summary }}</p>
+            <p class="ming"><img v-bind:src="el.coverImageUrl" width="100%"></p>
+            <p style="text-align:right"><a v-bind:href="'/newsdetail?pageid='+el.id" class="mlink">查看全部</a></p>
+            <div v-if="index == newsList.length-1" class="lastline"></div>
+        </div>
+        <a href="/news" class="morelink">更多大事记 >></a>
+    </section>
     <section id="adapter" class="adapter">
       <div class="container">
         <div class="row content text-center">
           <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".2s">Cooperative  partner<br><small class="txt-white">合作伙伴</small>
           </h1>
-          <div class="companybox">
+          <div class="companybox" v-if="pcsite">
             <span class="bleft"></span>
             <div class="imglist">
               <div class="row">
@@ -87,6 +118,14 @@
               </div>
             </div>
             <span class="bright"></span>
+          </div>
+          <div class="complist" v-else>
+            <div class="compbox clearfix">
+              <div class="compitem"><img src="../../static/img/cap_img_1.jpg" width="100%" alt="" /></div>
+              <div class="compitem"><img src="../../static/img/cap_img_2.jpg" width="100%" alt="" /></div>
+              <div class="compitem"><img src="../../static/img/cap_img_3.jpg" width="100%" alt="" /></div>
+              <div class="compitem"><img src="../../static/img/cap_img_4.jpg" width="100%" alt="" /></div>
+            </div>
           </div>
         </div>
       </div>
@@ -101,26 +140,19 @@
           <p class="qrcode">
             <img src="../assets/qrcode.jpg">
           </p>
-          <div class="cinfo">
+          <div class="cinfo" v-if="pcsite">
             <p><span class="ctel">0571-81999811</span><span class="cemail">nuoee@nuoee.com</span></p>
             <p class="mt10"><span class="caddress">上海市，威海路696弄 | 杭州，江干区庆春东路西子国际C座2402室</span></p>
+          </div>
+          <div class="cinfom">
+            <p><span class="ctel">0571-81999811</span></p>
+            <p><span class="cemail">nuoee@nuoee.com</span></p>
+            <p><span class="caddress">上海市，威海路696弄 | 杭州，江干区庆春东路西子国际C座2402室</span></p>
           </div>
         </div>
       </div>
       <div class="arrow-down"></div>
     </section>
-<!--     <section id="player">
-      <div class="container content wow fadeInLeft">
-        <h1 class="caption txt-orange">YOU ARE OUR PRIORITY!</h1>
-        <p>从匹配金融机构和交易型私募基金开始，您和您客户的<br class="hidden-xs">价值将在VERASTI上构建。</p>
-      </div>
-    </section> -->
-<!--     <section class="text-center social">
-      <ul class="">
-        <li class="sina"><a data-trigger="hover" data-placement="top" data-title="新浪微博" data-content="<img src='static/img/sina_qr.jpg'>"></a></li>
-        <li class="wechat"><a data-trigger="hover" data-placement="top" data-title="微信" data-content="<img src='static/img/sina_qr.jpg'>"></a></li>
-      </ul>
-    </section> -->
     <app-footer :class="{'at-home':home}"></app-footer>
   </div>
 </template>
@@ -129,6 +161,7 @@ import * as api from '../api'
 export default {
   data:function () {
     return {
+      pcsite: /(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent) ? false : true,
       name:"home",
     	home: true,
       title:"Home",
@@ -159,15 +192,6 @@ export default {
       }
 
       this.timeoutHandle = window.setTimeout(this.svgResize, 50);
-    },
-    gourl: function (id) {
-        var _ = this;
-        _.$router.push({
-          name: 'NewsDetail',
-          params: {
-              detail: _.newsList[id]
-          }
-        });
     }
   },
   beforeDestroy: function () {

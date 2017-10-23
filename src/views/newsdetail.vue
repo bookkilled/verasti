@@ -23,10 +23,10 @@ VERASTI作为一家为金融机构提供证券及金融衍生品交易整体解�
       </div>
       <div class="col-xs-12 col-sm-4 right">
         <div class="rightTitle">最近大事</div>
-        <div v-bind:style="{cursor: 'pointer'}" v-for="(el,index) in newsList" :key="index" @click="gourl(index)">
+        <a v-bind:style="{cursor: 'pointer'}" v-for="(el,index) in newsList" :key="index" v-bind:href="'/newsdetail?pageid='+el.id">
           <div class="rightImg"><img v-bind:src="el.coverImageUrl" width="100%"></div>
           <div class="rightText">{{ el.title }}</div>
-        </div>
+        </a>
         <!-- <div class="rightImg"><img src="../../static/img/ndt_img_2.jpg"></div>
         <div class="rightText">VERASTI受邀参加由斯坦福校友会与杉数科技共同 主办的关于AI与初创公司的讨论会</div> -->
         <div class="rightTitle">联系我们</div>
@@ -51,28 +51,37 @@ export default {
         name:"newsDetail",
         title:"NewsDetail",
         pageID: this.$route.query.pageid,
-        ptitle: localStorage.getItem('ptitle'),
-        pdate: localStorage.getItem('pdate'),
-        pAuthor: localStorage.getItem('pAuthor'),
-        pmsg: localStorage.getItem('pmsg'),
-        psummary: localStorage.getItem('psummary'),
+        ptitle: '',
+        pdate: '',
+        pAuthor: '',
+        pmsg: '',
+        psummary: '',
         newsList: [] // 新闻列表
     }
   },
   mounted () {
     var _ = this;
-    console.log(this.$route.params.detail);
-    !localStorage.getItem('ptitle') && localStorage.setItem('ptitle',this.$route.params.detail.title)
-    !localStorage.getItem('pdate') && localStorage.setItem('pdate',this.$route.params.detail.postDate || '')
-    !localStorage.getItem('pAuthor') && localStorage.setItem('pAuthor',this.$route.params.detail.nickName || '')
-    !localStorage.getItem('pmsg') && localStorage.setItem('pmsg',this.$route.params.detail.details || '')
-    !localStorage.getItem('psummary') && localStorage.setItem('psummary', this.$route.params.detail.summary || '')
-    // console.log(this.$route.params.detail);
+    api.getNewsDstail(_.pageID).then(function (res) {
+        if (res.status == 0) {
+          var dt = res.news;
+          _.ptitle= dt.title;
+          _.pdate= dt.postDate;
+          _.pAuthor= dt.nickName;
+          _.pmsg= dt.details;
+          _.psummary= dt.summary;
+        }
+    },function (err) {
+        // vm.errstate = true
+        // vm.errmsg = '接口请求异常！'
+    }).always(function(){
+        // vm.loading = false
+    });
     api.getNews().then(function (res) {
         for (var i = 0;i<2;i++) {
             _.newsList.push({
               title: res.list[i].title,
-              coverImageUrl: res.list[i].coverImageUrl
+              coverImageUrl: res.list[i].coverImageUrl,
+              id: res.list[i].id
             });
         }
     },function (err) {

@@ -40,3 +40,14 @@ export function getNews() {
     })
 }
 
+// 获取新闻详情
+export function getNewsDstail(id) {
+    return reqwest({
+      url: `${domain}/foreign/news/` + id,
+      method: Hmethod,
+      type: 'jsonp',
+      timeout: setTimeout,
+      contentType: 'application/json;charset=UTF-8',
+      data: {}
+    })
+}

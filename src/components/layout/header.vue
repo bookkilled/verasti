@@ -13,11 +13,11 @@
 		<!-- <span v-if="!navhome" class="page-title">{{title}}</span> -->
 		<nav class="nav-home hidden-xs hidden-sm" v-if="pcsite">
 			<ul v-bind:class="{'nav':true, 'navbar-nav':true, 'contact': navhome}">
-				<li><a href="/home"><span>首页</span></a></li>
-				<li><a href="/solution"><span>产品</span></a></li>
-				<li><a href="/news"><span>大事记</span></a></li>
-				<li><a href="/partner"><span>合作伙伴</span></a></li>
-				<li><a href="/culture"><span>企业文化</span></a></li>
+				<li><router-link to="/home"><span>首页</span></router-link></li>
+				<li><router-link to="/solution"><span>产品</span></router-link></li>
+				<li><router-link to="/news"><span>大事记</span></router-link></li>
+				<li><router-link to="/partner"><span>合作伙伴</span></router-link></li>
+				<li><router-link to="/culture"><span>企业文化</span></router-link></li>
 				<li><router-link to="/contact"><span>关于我们</span></router-link></li>
 			</ul>
 		</nav>
@@ -40,7 +40,11 @@ export default {
     mounted (){
     	$('header').on('click','.navbar-toggle',function(){
 			$(".nav-wrap").addClass("in");
-			$(".nav-wrap .closebtn").removeClass("out");
+			// $(".nav-wrap .closebtn").removeClass("out");
+			$(".navbar-toggle").css({
+				    'marginTop': '-40px',
+    				'marginRight': '72%'
+			})
 		})
 		// $('header').on('click',".nav-wrap .closebtn",function(){
 		// 	$(this).addClass("out");
@@ -51,9 +55,9 @@ export default {
 		var path = this.$route.path;
 		$(".nav-wrap a").click(function(){
 			if ($(this).attr("href")===undefined||$(this).attr("href").substr(0,path.length)===path) {
-				if($(this).hasClass("closebtn")){
-			        $(this).addClass("out");
-				}
+				// if($(this).hasClass("closebtn")){
+			  //       $(this).addClass("out");
+				// }
 				$(".nav-wrap .menu-el > div").each(function() {
 					$(this).css({
 					    "-webkit-transform":"translateX(100%)",

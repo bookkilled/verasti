@@ -9,16 +9,17 @@
     <router-view></router-view>
     </transition>
     <div class="nav-wrap">
-      <a class="closebtn"><span></span><span></span></a>
+      <!-- <a class="closebtn"><span></span><span></span></a> -->
       <div class="menu-el">
       <div class="wrap-left">
           <div class="navbar-wrap">
             <ul class="nav navbar-nav">
-              <li><router-link to="/home">HOME</router-link></li>
-              <li><router-link to="/solution">SOLUTION</router-link></li>
-              <li><router-link to="/culture">CULTURE</router-link></li>
-              <!-- <li><router-link to="/team">TEAM</router-link></li> -->
-              <li><router-link to="/contact">CONTACT</router-link></li>
+              <li><a class="apphome" href="/home">首页</a></li>
+              <li><a class="appsolution" href="/solution">产品</a></li>
+              <li><a class="appnews" href="/news">大事记</a></li>
+              <li><a class="apppartner" href="/partner">合作伙伴</a></li>
+              <li><a class="appculture" href="/culture">企业文化</a></li>
+              <li><a class="appcontact" href="/contact">关于我们</a></li>
             </ul>
           </div>
       </div>
