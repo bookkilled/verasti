@@ -493,15 +493,31 @@ video {
 	font-size: 16px;
 	color: #fff;
 	padding: 10px 20px 10px 34px;
+}
+.rules .cinfom span {
+	font-size: 16px;
+	color: #fff;
+	padding: 10px 20px 10px 34px;
 	display: block;
 }
-.rules .cinfo .ctel,.rules .cinfom .ctel {
+.rules .cinfo .ctel {
+	background: url('../img/cinfo_tel.jpg') left center no-repeat;
+}
+.rules .cinfo .caddress {
+	background: url('../img/cinfo_adr.jpg') left center no-repeat;
+}
+.rules .cinfo .cemail {
+	background: url('../img/cinfo_em.jpg') left center no-repeat;
+}
+.rules .cinfom .ctel {
 	background: url('../img/cinfo_tel.jpg') left 14px no-repeat;
 }
-.rules .cinfo .caddress,.rules .cinfom .caddress {
+
+.rules .cinfom .caddress {
 	background: url('../img/cinfo_adr.jpg') left 14px no-repeat;
 }
-.rules .cinfo .cemail,.rules .cinfom .cemail {
+
+.rules .cinfom .cemail {
 	background: url('../img/cinfo_em.jpg') left 14px no-repeat;
 }
 /*#player{

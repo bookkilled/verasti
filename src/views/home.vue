@@ -144,7 +144,7 @@
             <p><span class="ctel">0571-81999811</span><span class="cemail">nuoee@nuoee.com</span></p>
             <p class="mt10"><span class="caddress">上海市，威海路696弄 | 杭州，江干区庆春东路西子国际C座2402室</span></p>
           </div>
-          <div class="cinfom">
+          <div class="cinfom" v-else>
             <p><span class="ctel">0571-81999811</span></p>
             <p><span class="cemail">nuoee@nuoee.com</span></p>
             <p><span class="caddress">上海市，威海路696弄 | 杭州，江干区庆春东路西子国际C座2402室</span></p>
