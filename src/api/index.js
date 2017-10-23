@@ -3,7 +3,7 @@
  */
 import reqwest from 'reqwest'
 
-const setTimeout = 5000
+const setTimeout = 20000
 const DEV_ENV = process.env.DEV_ENV || ''
 
 // const domain = (DEV_ENV === 'production')

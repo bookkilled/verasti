@@ -1415,6 +1415,7 @@ section .title{
 .newsbox .newsRight .newsModule {
 	margin-left: 151px;
 }
+/* .newsbox .newsLeft .newsModule .active:after */
 .newsbox .newsModule .newsModuleTitle {
 	padding-bottom: 11px;
 	line-height: 27px;
@@ -1443,7 +1444,7 @@ section .title{
 	width: 166px;
 	height: 24px;
 	line-height: 24px;
-	top: 50%;
+	/* top: 50%; */
 	margin-top: -12px;
 	font-size: 16px;
 	display: inline-block;
@@ -1454,13 +1455,13 @@ section .title{
 	padding-left: 176px;
 	width: 280px;
 }
-.newsbox .newsModule .yellowLeftLine {
-	background: url('../img/left_yellow.png') left center no-repeat;
-	color: #e5bf87;
-}
 .newsbox .newsModule .whiteLeftLine {
 	background: url('../img/left_white.png') left center no-repeat;
 	color: #fff;
+}
+.newsbox .newsModule .yellowLeftLine {
+	background: url('../img/left_yellow.png') left center no-repeat;
+	color: #e5bf87;
 }
 
 .newsbox .newsModule .yellowRightLine,
@@ -1497,7 +1498,7 @@ section .title{
 	margin: 0 auto;
 	margin-bottom: 54px;
 }
-.morelink:hover {
+.morelink:hover,.morelink:focus {
 	color: #e5bf87;
 }
 .news .mt225 {
@@ -1550,10 +1551,14 @@ section .title{
 	font-size: 24px;
 	color: #000000;
 	margin-bottom: 20px;
+	line-height: 1.6;
 }
 .newsdetail .left .tag,.newsdetail .left .info  {
 	font-size: 14px;
 	color: #000000;
+}
+.newsdetail .left .info {
+	overflow: hidden;
 }
 .ndetailbox .right {
 	/* padding-top: 30px;	 */

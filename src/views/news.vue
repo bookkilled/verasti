@@ -10,40 +10,40 @@
     <section class="newsbox">
         <div class="newsLine"></div>
         <div class="newsLeft">
-            <div class="newsModule">
-                <p class="newsModuleTitle">VERASTI受邀于杭州玉皇山南基金小镇 管委会-私募的合规风控化管理</p>
-                <div class="newsModuleImg"><img src="../../static/img/ndt_img_4.jpg"></div>
-                <span class="newsModuleMore">查看全部</span>
+            <div class="newsModule" v-for="(el,index) in newsList" :key="index" v-if="(index+1)%2 == 1">
+                <p class="newsModuleTitle">{{ el.title }}</p>
+                <div class="newsModuleImg"><img v-bind:src="el.coverImageUrl"></div>
+                <a @click="gourl(index)" class="newsModuleMore">查看全部</a>
                 <div class="clear"></div>
-                <span class="yellowLeftLine">2017-09-04</span>
+                <span v-bind:class="{'whiteLeftLine':true,'yellowLeftLine': index == 0}" v-bind:style="{top: '20%'}">{{ el.postDate }}</span>
             </div>
-            <div class="newsModule">
-                <p class="newsModuleTitle">VERASTI受邀于杭州玉皇山南基金小镇 管委会-私募的合规风控化管理</p>
-                <div class="newsModuleImg"><img src="../../static/img/ndt_img_4.jpg"></div>
-                <span class="newsModuleMore">查看全部</span>
+            <!-- <div class="newsModule" v-for="(el,index) in newsList" :key="index" v-if="index == 1">
+                <p class="newsModuleTitle">{{ el.title }}</p>
+                <div class="newsModuleImg"><img v-bind:src="el.coverImageUrl"></div>
+                <a v-bind:href="el.href" class="newsModuleMore">查看全部</a>
                 <div class="clear"></div>
-                <span class="whiteLeftLine">2017-09-04</span>
-            </div>
+                <span class="whiteLeftLine">{{ el.postDate }}</span>
+            </div> -->
         </div>
         <div class="newsRight">
-            <div class="newsModule mt225">
-                <p class="newsModuleTitle">VERASTI受邀于杭州玉皇山南基金小镇 管委会-私募的合规风控化管理</p>
-                <div class="newsModuleImg"><img src="../../static/img/ndt_img_4.jpg"></div>
-                <span class="newsModuleMore">查看全部</span>
+            <div class="newsModule" v-for="(el,index) in newsList" :key="index" v-if="(index+1)%2 == 0">
+                <p class="newsModuleTitle">{{ el.title }}</p>
+                <div class="newsModuleImg"><img v-bind:src="el.coverImageUrl"></div>
+                <a v-bind:href="el.href" class="newsModuleMore">查看全部</a>
                 <div class="clear"></div>
-                <span class="yellowRightLine">2017-09-04</span>
+                <span class="whiteRightLine" v-bind:style="{bottom: '20%'}">{{ el.postDate }}</span>
             </div>
-            <div class="newsModule">
-                <p class="newsModuleTitle">VERASTI受邀于杭州玉皇山南基金小镇 管委会-私募的合规风控化管理</p>
-                <div class="newsModuleImg"><img src="../../static/img/ndt_img_4.jpg"></div>
-                <span class="newsModuleMore">查看全部</span>
+            <!-- <div class="newsModule" v-for="(el,index) in newsList" :key="index" v-if="index == 3">
+                <p class="newsModuleTitle">{{ el.title }}</p>
+                <div class="newsModuleImg"><img v-bind:src="el.coverImageUrl"></div>
+                <a v-bind:href="el.href" class="newsModuleMore">查看全部</a>
                 <div class="clear"></div>
-                <span class="whiteRightLine">2017-09-04</span>
-            </div>
+                <span class="whiteRightLine">{{ el.postDate }}</span>
+            </div> -->
         </div>
         <span class="point"></span>
     </section>
-    <a href="javascript:;" class="morelink">更多</a>
+    <a href="javascript:;" class="morelink" @click="getMore">{{ liststips }}</a>
 	<app-footer></app-footer>
   </div>
 </template>
@@ -53,13 +53,34 @@ export default {
   data: function() {
     return {
       name:"news",
-      title:"News"
+      title:"News",
+      totalList: [], // 总新闻列表
+      newsList: [], // 当前新闻列表
+      newsInfo: {},
+      pagenum: 1,
+      cuspagenum: 4,
+      liststips: '更多'
     }
   },
-  beforeCreate:function(){
-    let vm = this
+  mounted:function(){
+    let vm = this;
     api.getNews().then(function (res) {
-        console.log(res)
+        var data = res;
+        var l = data.list.length > vm.cuspagenum ? vm.cuspagenum : data.list.length;
+        vm.newsInfo = data.pageInfo;
+        vm.totalList = data.list;
+        for (var i = 0;i<l;i++) {
+            vm.newsList.push({
+                title: data.list[i].title,
+                coverImageUrl: data.list[i].coverImageUrl,
+                postDate: data.list[i].postDate,
+                href: 'newsdetail?pageid=' + data.list[i].id,
+                detail: data.list[i].details
+            });
+        }
+        if(data.list.length < vm.cuspagenum) {
+            vm.liststips = '没有更多了'
+        }
     },function (err) {
         // vm.errstate = true
         // vm.errmsg = '接口请求异常！'
@@ -67,8 +88,35 @@ export default {
         // vm.loading = false
     });
   },//组件实例化之前: 举个栗子：可以在这加个loading事件
-  mounted: function() {
-      
-  } 
+  methods: {
+      getMore: function () {
+        var _ = this;
+        _.pagenum ++;
+        var l = 0;
+        if (_.totalList.length > (_.pagenum-1)*_.cuspagenum) {
+            l = _.pagenum*_.cuspagenum;
+            for (var i = (_.pagenum-1)*_.cuspagenum;i<l;i++) {
+                _.newsList.push({
+                    title: _.totalList[i].title,
+                    coverImageUrl: _.totalList[i].coverImageUrl,
+                    postDate: _.totalList[i].postDate,
+                    href: 'newsdetail?pageid=' + _.totalList[i].id,
+                    detail: _.totalList[i].details
+                });
+            }
+        } else {
+            _.liststips = '没有更多了'
+        }
+      },
+      gourl: function (id) {
+          var _ = this;
+          _.$router.push({
+            name: 'NewsDetail',
+            params: {
+                detail: _.totalList[id]
+            }
+          });
+      }
+  }
 }
 </script>
