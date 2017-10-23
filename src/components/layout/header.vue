@@ -12,7 +12,7 @@
 		</div>
 		<!-- <span v-if="!navhome" class="page-title">{{title}}</span> -->
 		<nav class="nav-home hidden-xs hidden-sm" v-if="pcsite">
-			<ul class="nav navbar-nav">
+			<ul v-bind:class="{'nav':true, 'navbar-nav':true, 'contact': navhome}">
 				<li><a href="/home"><span>首页</span></a></li>
 				<li><a href="/solution"><span>产品</span></a></li>
 				<li><a href="/news"><span>大事记</span></a></li>

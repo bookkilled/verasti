@@ -1,6 +1,6 @@
 <template>
   <div>
-	<app-header :title="title"></app-header>
+	<app-header :title="title" :navhome="contact" class="contact"></app-header>
 	<section class="banner contact">
     <div class="fullpage">
       <div class="bg banner-contact wow fadeIn"></div>
