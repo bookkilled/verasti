@@ -75,7 +75,8 @@ export default {
                 coverImageUrl: data.list[i].coverImageUrl,
                 postDate: data.list[i].postDate,
                 href: 'newsdetail?pageid=' + data.list[i].id,
-                detail: data.list[i].details
+                detail: data.list[i].details,
+                summary: data.list[i].summary
             });
         }
         if(data.list.length < vm.cuspagenum) {

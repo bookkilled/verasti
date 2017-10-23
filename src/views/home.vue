@@ -4,10 +4,10 @@
   	<section id="banner" class="banner home">
       <div class="fullpage">
         <div class="bg bg-banner">
-          <div class="banner-video">
+          <div class="banner-video" v-for="(dk,index) in bannerList" :key="index">
           <video playsinline loop muted autoplay class="bg_video">
                 <!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
-            <source src="static/bg_video.mp4" type="video/mp4">
+            <source v-bind:src="dk.coverImageUrl" type="video/mp4">
             </video>
             </div>
           </div>
@@ -24,13 +24,13 @@
           <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".2s">advantage<br><small class="txt-white">优势</small>
           </h1>
           <div class="advantagebox">
-            <div class="boxt">
+            <div class="boxt wow fadeInLeft" data-wow-delay=".2s">
               <p class="tit">高效灵活</p>
               <p class="dt">通过统一API接入，对各交易平台的适配，高效灵活，支持中后台各类业务系统部署</p>
               <p class="tit">统一合规风控</p>
               <p class="dt">统一的风控合规系统部署在策略程序和柜台系统之间，实时监测包括流量，大单等异常情况，将风险降低到最低</p>
             </div>
-            <div class="boxb">
+            <div class="boxb wow fadeInRight" data-wow-delay=".2s">
               <p class="tit">匹配各方网络</p>
               <p class="dt">全网匹配专业化的证券及衍生品交易，支持多节点模块部署，支持模块无缝热插拨</p>
               <p class="tit">跨市场交易统一入口</p>
@@ -46,25 +46,25 @@
         <div class="row content text-center">
           <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".2s">memorabilia<br><small class="txt-white">公司大事记</small>
           </h1>
-          <div class="riskbox">
-            <div class="itema item">
-              <span class="ndate">2017-09-04</span>
+          <div class="riskbox wow fadeInUp" data-wow-delay=".2s">
+            <div v-for="(el,index) in newsList" :key="index" :class="[index == 1 ? 'itema' : 'itemb', 'item']">
+              <span class="ndate">{{ el.postDate }}</span>
               <div class="ndetail">
-                <p class="p1">VERASTI受邀于杭州玉皇山南基金小镇管委会-私募的合规风控化管理</p>
-                <p class="p2">在国家重磅的监管之下，如何防范合规风险的基础上高效完成基金募......</p>
-                <a class="link" href="#">查看全部</a>
+                <p class="p1">{{ el.title }}</p>
+                <p class="p2">{{ el.summary }}</p>
+                <a class="link" href="javascript:;" @click="gourl(index)">查看全部</a>
               </div>
             </div>
-            <div class="itemb item">
+            <!-- <div class="itemb item">
               <span class="ndate">2017-09-04</span>
               <div class="ndetail">
                 <p class="p1">VERASTI亮相2017全球（上海）人工智能创新峰会</p>
                 <p class="p2">在国家重磅的监管之下，如何防范合规风险的基础上高效完成基金募......</p>
-                <a class="link" href="#">查看全部</a>
+                <a class="link" href="javascript:;" @click="gourl(index)">查看全部</a>
               </div>
-            </div>
+            </div> -->
             <div class="itemc item">
-                <a class="link" href="#">更多大事记 &gt;&gt;</a>
+                <a class="link" href="/news">更多大事记 &gt;&gt;</a>
             </div>
           </div>
         </div>
@@ -125,12 +125,15 @@
   </div>
 </template>
 <script>
+import * as api from '../api'
 export default {
   data:function () {
     return {
       name:"home",
     	home: true,
-    	title:"Home"
+      title:"Home",
+      bannerList: [], // banner列表
+      newsList: [] // 新闻列表
     }
   },
   methods: {
@@ -156,13 +159,38 @@ export default {
       }
 
       this.timeoutHandle = window.setTimeout(this.svgResize, 50);
+    },
+    gourl: function (id) {
+        var _ = this;
+        _.$router.push({
+          name: 'NewsDetail',
+          params: {
+              detail: _.newsList[id]
+          }
+        });
     }
   },
   beforeDestroy: function () {
     window.removeEventListener('resize', this.handleWindowResize)
   },
   mounted:function (){
-
+    var _ = this;
+    api.getBanner().then(function (res) {
+        _.bannerList = res.list; // banner列表;      
+    },function (err) {
+        // vm.errstate = true
+        // vm.errmsg = '接口请求异常！'
+    });
+    api.getNews().then(function (res) {
+        for (var i = 0;i<2;i++) {
+            _.newsList.push(res.list[i]);
+        }
+    },function (err) {
+        // vm.errstate = true
+        // vm.errmsg = '接口请求异常！'
+    }).always(function(){
+        // vm.loading = false
+    });
     $(".nav-home a,.logo a").click(function(){
       var ahash = this.hash;
       var target = $(ahash);
