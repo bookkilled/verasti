@@ -1704,6 +1704,9 @@ section .title{
 .newsdetail .left .info {
 	overflow: hidden;
 }
+.newsdetail .left .info img {
+	width: 100% !important;
+}
 .ndetailbox .right {
 	/* padding-top: 30px;	 */
 }
