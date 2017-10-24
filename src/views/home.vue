@@ -4,19 +4,31 @@
   	<section id="banner" class="banner home">
       <div class="fullpage">
         <div class="bg bg-banner">
-          <div class="banner-video" v-for="(dk,index) in bannerList" :key="index">
-          <video playsinline loop muted autoplay class="bg_video">
-                <!-- <source src="http://thenewcode.com/assets/videos/polina.webm" type="video/webm"> -->
+          <!-- <div class="banner-video" v-for="(dk,index) in bannerList" :key="index">
+            <video playsinline loop muted autoplay class="bg_video">
             <source v-bind:src="dk.coverImageUrl" type="video/mp4">
             </video>
-            </div>
-          </div>
-        <div class="intro text-center">
+          </div> -->
+          <swiper :options="swiperOption"  ref="mySwiper">  
+            <!-- 这部分放你要渲染的那些内容 -->  
+              <swiper-slide  v-for="(dk,index) in bannerList" :key="index"> 
+                 <video playsinline loop muted autoplay class="bg_video" v-if="dk.coverImageUrl.indexOf('mp4')>-1">
+                  <source v-bind:src="dk.coverImageUrl" type="video/mp4">
+                 </video>
+                 <div v-else>
+                   <img v-bind:src="dk.coverImageUrl">
+                 </div>
+              </swiper-slide>  
+              <!-- 这是轮播的小圆点 -->  
+              <div class="swiper-pagination" slot="pagination"></div>  
+          </swiper>
+        </div>
+        <!-- <div class="intro text-center">
           <h1 class="wow fadeInLeft" data-wow-delay=".1s" data-wow-duration="1.5s">FIND AND TRADE WHAT YOU <br class="hidden-xs">NEED THROUGH THE NETWORK YOU<br class="hidden-xs"> ALREADY TRUST</h1>
           <p class="wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1.5s">VERASTI开创了统一的跨市场交易入口，构建了一个连接金融机构、交易型私募基金的网络</p>
-        </div>
+        </div> -->
       </div>
-      <div class="arrow-down"></div>
+      <div class="arrow-down" v-if="!pcsite"></div>
     </section>
     <section id="basic" class="basic">
       <div class="container">
@@ -158,7 +170,12 @@
 </template>
 <script>
 import * as api from '../api'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
+  components: {  
+            swiper,  
+            swiperSlide  
+  },  
   data:function () {
     return {
       pcsite: /(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent) ? false : true,
@@ -166,7 +183,23 @@ export default {
     	home: true,
       title:"Home",
       bannerList: [], // banner列表
-      newsList: [] // 新闻列表
+      newsList: [], // 新闻列表
+      swiperOption: {  
+        //是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true  
+        notNextTick: true,  
+        autoplay: 3000,
+        speed:3000,
+        pagination: '.swiper-pagination',  
+        slidesPerView: 'auto',  
+        // setWrapperSize :true,
+        centeredSlides: true,  
+        paginationClickable: true,  
+        onSlideChangeEnd: swiper => {  
+            //这个位置放swiper的回调方法  
+            this.page = swiper.realIndex+1;  
+            this.index = swiper.realIndex;  
+        } 
+      } 
     }
   },
   methods: {
@@ -197,6 +230,13 @@ export default {
   beforeDestroy: function () {
     window.removeEventListener('resize', this.handleWindowResize)
   },
+  //定义这个sweiper对象  
+  computed: {  
+
+      swiper() {  
+        return this.$refs.mySwiper.swiper;  
+      }  
+  },
   mounted:function (){
     var _ = this;
     api.getBanner().then(function (res) {
@@ -215,6 +255,9 @@ export default {
     }).always(function(){
         // vm.loading = false
     });
+    //这边就可以使用swiper这个对象去使用swiper官网中的那些方法  
+    this.swiper.slideTo(0, 3000, false);
+
     $(".nav-home a,.logo a").click(function(){
       var ahash = this.hash;
       var target = $(ahash);
