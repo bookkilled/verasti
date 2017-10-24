@@ -9,8 +9,7 @@
             <source v-bind:src="dk.coverImageUrl" type="video/mp4">
             </video>
           </div> -->
-          <swiper :options="swiperOption"  ref="mySwiper">  
-            <!-- 这部分放你要渲染的那些内容 -->  
+          <!-- <swiper :options="swiperOption"  ref="mySwiper">  
               <swiper-slide  v-for="(dk,index) in bannerList" :key="index"> 
                  <video playsinline loop muted autoplay class="bg_video" v-if="dk.coverImageUrl.indexOf('mp4')>-1">
                   <source v-bind:src="dk.coverImageUrl" type="video/mp4">
@@ -19,9 +18,22 @@
                    <img v-bind:src="dk.coverImageUrl">
                  </div>
               </swiper-slide>  
-              <!-- 这是轮播的小圆点 -->  
               <div class="swiper-pagination" slot="pagination"></div>  
-          </swiper>
+          </swiper> -->
+          <div class="swiper-container" id="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" v-for="(dk,index) in bannerList" :key="index">
+                <video playsinline loop muted autoplay class="bg_video" v-if="dk.coverImageUrl.indexOf('mp4')>-1">
+                  <source v-bind:src="dk.coverImageUrl" type="video/mp4">
+                 </video>
+                 <div v-else>
+                   <img v-bind:src="dk.coverImageUrl">
+                 </div>
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
         <!-- <div class="intro text-center">
           <h1 class="wow fadeInLeft" data-wow-delay=".1s" data-wow-duration="1.5s">FIND AND TRADE WHAT YOU <br class="hidden-xs">NEED THROUGH THE NETWORK YOU<br class="hidden-xs"> ALREADY TRUST</h1>
@@ -170,12 +182,14 @@
 </template>
 <script>
 import * as api from '../api'
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import Swiper from 'swiper';
+import 'swiper/dist/css/swiper.min.css';
+// import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
-  components: {  
-            swiper,  
-            swiperSlide  
-  },  
+  // components: {  
+  //           swiper,  
+  //           swiperSlide  
+  // },  
   data:function () {
     return {
       pcsite: /(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent) ? false : true,
@@ -232,7 +246,6 @@ export default {
   },
   //定义这个sweiper对象  
   computed: {  
-
       swiper() {  
         return this.$refs.mySwiper.swiper;  
       }  
@@ -256,28 +269,35 @@ export default {
         // vm.loading = false
     });
     //这边就可以使用swiper这个对象去使用swiper官网中的那些方法  
-    this.swiper.slideTo(0, 3000, false);
+    // this.swiper.slideTo(0, 3000, false);
+    var mySwiper =setTimeout(function () {
+      new Swiper('#swiper', {
+        loop: true,
+        pagination: '.swiper-pagination',
+        autoplay: 2000,
+        paginationClickable: true
+      });
+    }, 100)
+    // $(".nav-home a,.logo a").click(function(){
+    //   var ahash = this.hash;
+    //   var target = $(ahash);
+    //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    //       if (target.length) {
+    //         var $li = $(this).closest("li");
+    //         var navHeight = 70;
+    //         $('html,body').animate({
+    //           scrollTop: target.offset().top
+    //         }, 1000,function(){
+    //           // window.location.hash = ahash;
+    //           if($li.length){
+    //             $li.siblings(".active").removeClass("active");
+    //             $li.addClass("active");
+    //           }
 
-    $(".nav-home a,.logo a").click(function(){
-      var ahash = this.hash;
-      var target = $(ahash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            var $li = $(this).closest("li");
-            var navHeight = 70;
-            $('html,body').animate({
-              scrollTop: target.offset().top
-            }, 1000,function(){
-              // window.location.hash = ahash;
-              if($li.length){
-                $li.siblings(".active").removeClass("active");
-                $li.addClass("active");
-              }
-
-            });
-        }
-          return false;
-    })
+    //         });
+    //     }
+    //       return false;
+    // })
 
 /*    var popoverTemplate = ['<div class="popover">',
           '<div class="arrow"></div>',

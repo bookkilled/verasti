@@ -27,7 +27,6 @@
 	        <span class="icon-bar"></span>
 	    </a>
 	    </div>
-		<div class="gotop" v-if="pcsite"></div>
 	</header>
 </template>
 <script>

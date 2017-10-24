@@ -57,7 +57,7 @@
       </defs>
     </svg>
   </div>
-  <app-header :class="{'at-home':home}" :navhome='home' ></app-header>
+  <app-header ></app-header>
 	<!-- <app-header :title="title" :class="'at-solution'" ></app-header> -->
 	<section class="banner solution">
    <div class="fullpage">
