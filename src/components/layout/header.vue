@@ -37,7 +37,7 @@ export default {
 			}
 		},
     props: ['title','navhome'],
-    mounted (){
+    mounted: function(){
     	$('header').on('click','.navbar-toggle',function(){
 			$(".nav-wrap").addClass("in");
 			// $(".nav-wrap .closebtn").removeClass("out");

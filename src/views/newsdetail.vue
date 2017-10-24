@@ -59,7 +59,7 @@ export default {
         newsList: [] // 新闻列表
     }
   },
-  mounted () {
+  mounted:function () {
     var _ = this;
     api.getNewsDstail(_.pageID).then(function (res) {
         if (res.status == 0) {
@@ -76,7 +76,7 @@ export default {
     }).always(function(){
         // vm.loading = false
     });
-    api.getNews().then(function (res) {
+    api.getNews(1).then(function (res) {
         for (var i = 0;i<2;i++) {
             _.newsList.push({
               title: res.list[i].title,

@@ -70,6 +70,8 @@ export default {
       name:"news",
       title:"News",
       totalList: [], // 总新闻列表
+      totalnum: 0,
+      totalpage: 0,
       newsList: [], // 当前新闻列表
       newsInfo: {},
       pagenum: 1,
@@ -78,11 +80,12 @@ export default {
     }
   },
   mounted:function(){
-    let vm = this;
-    api.getNews().then(function (res) {
+    var vm = this;
+    api.getNews(vm.pagenum).then(function (res) {
         var data = res;
         var l = data.list.length > vm.cuspagenum ? vm.cuspagenum : data.list.length;
-        vm.newsInfo = data.pageInfo;
+        vm.totalnum = data.pageInfo.totalCount;
+        vm.totalpage = data.pageInfo.totalPage;
         vm.totalList = data.list;
         for (var i = 0;i<l;i++) {
             vm.newsList.push({
@@ -95,7 +98,7 @@ export default {
                 id: data.list[i].id
             });
         }
-        if(data.list.length < vm.cuspagenum) {
+        if(data.list.length < data.pageInfo.pageSize) {
             vm.liststips = '没有更多了'
         }
     },function (err) {
@@ -109,21 +112,47 @@ export default {
       getMore: function () {
         var _ = this;
         _.pagenum ++;
-        var l = 0;
-        if (_.totalList.length > (_.pagenum-1)*_.cuspagenum) {
-            l = _.pagenum*_.cuspagenum;
-            for (var i = (_.pagenum-1)*_.cuspagenum;i<l;i++) {
+        _.pagenum <= _.totalpage && api.getNews(_.pagenum).then(function (res) {
+            var data = res;
+            var l = data.list.length;
+            _.totalnum = data.pageInfo.totalCount;
+            _.totalpage = data.pageInfo.totalPage;
+            for (var i = 0;i<l;i++) {
                 _.newsList.push({
-                    title: _.totalList[i].title,
-                    coverImageUrl: _.totalList[i].coverImageUrl,
-                    postDate: _.totalList[i].postDate,
-                    href: 'newsdetail?pageid=' + _.totalList[i].id,
-                    detail: _.totalList[i].details
+                    title: data.list[i].title,
+                    coverImageUrl: data.list[i].coverImageUrl,
+                    postDate: data.list[i].postDate,
+                    href: 'newsdetail?pageid=' + data.list[i].id,
+                    detail: data.list[i].details,
+                    summary: data.list[i].summary,
+                    id: data.list[i].id
                 });
             }
-        } else {
-            _.liststips = '没有更多了'
-        }
+            if(data.list.length < data.pageInfo.pageSize) {
+                _.liststips = '没有更多了'
+            }
+            console.log(_.totalList.length,_.totalnum );
+        },function (err) {
+            // vm.errstate = true
+            // vm.errmsg = '接口请求异常！'
+        }).always(function(){
+            // vm.loading = false
+        });
+        // var l = 0;
+        // if (_.totalList.length > (_.pagenum-1)*_.cuspagenum) {
+        //     l = _.pagenum*_.cuspagenum;
+        //     for (var i = (_.pagenum-1)*_.cuspagenum;i<l;i++) {
+        //         _.newsList.push({
+        //             title: _.totalList[i].title,
+        //             coverImageUrl: _.totalList[i].coverImageUrl,
+        //             postDate: _.totalList[i].postDate,
+        //             href: 'newsdetail?pageid=' + _.totalList[i].id,
+        //             detail: _.totalList[i].details
+        //         });
+        //     }
+        // } else {
+        //     _.liststips = '没有更多了'
+        // }
       }
   }
 }

@@ -26,7 +26,7 @@
                 <video playsinline loop muted autoplay class="bg_video" v-if="dk.coverImageUrl.indexOf('mp4')>-1">
                   <source v-bind:src="dk.coverImageUrl" type="video/mp4">
                  </video>
-                 <div v-else>
+                 <div class="bg_img" v-else>
                    <img v-bind:src="dk.coverImageUrl" width="100%">
                  </div>
               </div>
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="intro text-center">
-          <h1 class="wow fadeInLeft" data-wow-delay=".1s" data-wow-duration="1.5s">FIND AND TRADE WHAT YOU <br class="hidden-xs">NEED THROUGH THE NETWORK YOU<br class="hidden-xs"> ALREADY TRUST</h1>
+          <h1 class="wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1.5s">FIND AND TRADE WHAT YOU <br class="hidden-xs">NEED THROUGH THE NETWORK YOU<br class="hidden-xs"> ALREADY TRUST</h1>
           <p class="wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1.5s">VERASTI开创了统一的跨市场交易入口，构建了一个连接金融机构、交易型私募基金的网络</p>
         </div>
       </div>
@@ -45,16 +45,16 @@
     <section id="basic" class="basic">
       <div class="container">
         <div class="row content text-center">
-          <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".2s">advantage<br><small class="txt-white">优势</small>
+          <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".5s">advantage<br><small class="txt-white">优势</small>
           </h1>
           <div class="advantagebox" v-if="pcsite">
-            <div class="boxt wow fadeInLeft" data-wow-delay=".2s">
+            <div class="boxt wow fadeInLeft" data-wow-delay=".5s">
               <p class="tit">高效灵活</p>
               <p class="dt">通过统一API接入，对各交易平台的适配，高效灵活，支持中后台各类业务系统部署</p>
               <p class="tit">统一合规风控</p>
               <p class="dt">统一的风控合规系统部署在策略程序和柜台系统之间，实时监测包括流量，大单等异常情况，将风险降低到最低</p>
             </div>
-            <div class="boxb wow fadeInRight" data-wow-delay=".2s">
+            <div class="boxb wow fadeInRight" data-wow-delay=".5s">
               <p class="tit">匹配各方网络</p>
               <p class="dt">全网匹配专业化的证券及衍生品交易，支持多节点模块部署，支持模块无缝热插拨</p>
               <p class="tit">跨市场交易统一入口</p>
@@ -62,15 +62,15 @@
             </div>
           </div>
           <div class="advantagebox" v-else>
-            <p class="wow fadeInLeft" data-wow-delay=".2s" style="text-align:center"><img src="../../static/img/cap_img_pc.jpg" width="33%"></p>
-            <div class="wow fadeInLeft" data-wow-delay=".2s">
+            <p class="wow fadeInLeft" data-wow-delay=".5s" style="text-align:center"><img src="../../static/img/cap_img_pc.jpg" width="33%"></p>
+            <div class="wow fadeInLeft" data-wow-delay=".5s">
               <p class="tit">高效灵活</p>
               <p class="dt">通过统一API接入，对各交易平台的适配，高效灵活，支持中后台各类业务系统部署</p>
               <p class="tit">统一合规风控</p>
               <p class="dt">统一的风控合规系统部署在策略程序和柜台系统之间，实时监测包括流量，大单等异常情况，将风险降低到最低</p>
             </div>
-            <p class="wow fadeInRight" data-wow-delay=".2s"  style="text-align:center"><img src="../../static/img/cap_img_mac.jpg" width="33%"></p>
-            <div class="wow fadeInRight" data-wow-delay=".2s" >
+            <p class="wow fadeInRight" data-wow-delay=".5s"  style="text-align:center"><img src="../../static/img/cap_img_mac.jpg" width="33%"></p>
+            <div class="wow fadeInRight" data-wow-delay=".5s" >
               <p class="tit">匹配各方网络</p>
               <p class="dt">全网匹配专业化的证券及衍生品交易，支持多节点模块部署，支持模块无缝热插拨</p>
               <p class="tit">跨市场交易统一入口</p>
@@ -84,9 +84,9 @@
     <section id="risk" class="risk" v-if="pcsite">
       <div class="container">
         <div class="row content text-center">
-          <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".2s">memorabilia<br><small class="txt-white">公司大事记</small>
+          <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".5s">memorabilia<br><small class="txt-white">公司大事记</small>
           </h1>
-          <div class="riskbox wow fadeInUp" data-wow-delay=".2s">
+          <div class="riskbox wow fadeInUp" data-wow-delay=".5s">
             <div v-for="(el,index) in newsList" :key="index" :class="[index == 1 ? 'itema' : 'itemb', 'item']">
               <span class="ndate">{{ el.postDate }}</span>
               <div class="ndetail">
@@ -112,7 +112,7 @@
       <div class="arrow-down"></div>
     </section>
     <section class="newsbox" style="background: #193044" v-else>
-        <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".2s">MEMORABILIA<br><small class="txt-white">公司大事记</small>
+        <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".5s">MEMORABILIA<br><small class="txt-white">公司大事记</small>
         </h1>
         <div class="mitem" v-for="(el,index) in newsList" :key="index">
             <div v-bind:class="['mline',(index == 0 ? 'first' : '')]"></div>
@@ -129,26 +129,26 @@
     <section id="adapter" class="adapter">
       <div class="container">
         <div class="row content text-center">
-          <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".2s">Cooperative  partner<br><small class="txt-white">合作伙伴</small>
+          <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".5s">Cooperative  partner<br><small class="txt-white">合作伙伴</small>
           </h1>
           <div class="companybox" v-if="pcsite">
-            <span class="bleft"></span>
+            <span class="bleft" @click="preimg"></span>
             <div class="imglist">
               <div class="row">
-              <div class="col-xs-6 col-sm-3"><img src="../../static/img/cap_img_1.jpg" width="243" alt="" /></div>
-              <div class="col-xs-6 col-sm-3"><img src="../../static/img/cap_img_2.jpg" width="243" alt="" /></div>
-              <div class="col-xs-6 col-sm-3"><img src="../../static/img/cap_img_3.jpg" width="243" alt="" /></div>
-              <div class="col-xs-6 col-sm-3"><img src="../../static/img/cap_img_4.jpg" width="243" alt="" /></div>
+              <div class="col-xs-6 col-sm-3 citem" v-for="(item,index) in showcomplist" :key="index">
+                <img v-bind:src="'../../static/img/'+item.i+'.png'" width="243" alt="" />
+                <span>{{ item.name }}</span>
+              </div>
               </div>
             </div>
-            <span class="bright"></span>
+            <span class="bright" @click="nextimg"></span>
           </div>
           <div class="complist" v-else>
             <div class="compbox clearfix">
-              <div class="compitem"><img src="../../static/img/cap_img_1.jpg" width="100%" alt="" /></div>
-              <div class="compitem"><img src="../../static/img/cap_img_2.jpg" width="100%" alt="" /></div>
-              <div class="compitem"><img src="../../static/img/cap_img_3.jpg" width="100%" alt="" /></div>
-              <div class="compitem"><img src="../../static/img/cap_img_4.jpg" width="100%" alt="" /></div>
+              <div class="compitem" v-for="(item,index) in showcomplist" :key="index">
+                <img v-bind:src="'../../static/img/'+item.i+'.png'" width="100%" alt="" />
+                <span>{{ item.name }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -158,7 +158,7 @@
     <section id="rules" class="rules">
       <div class="container">
         <div class="row content text-center">
-          <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".2s">CONTACT US<br><small class="txt-white">联系我们</small>
+          <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".5s">CONTACT US<br><small class="txt-white">联系我们</small>
           </h1>
           <p class="wxtit">微信公众号：VERASTI</p>
           <p class="qrcode">
@@ -191,7 +191,30 @@ export default {
     	home: true,
       title:"Home",
       bannerList: [], // banner列表
-      newsList: [] // 新闻列表
+      newsList: [], // 新闻列表
+      complist: [
+        {i:'01',name:'东海证券'},
+        {i:'02',name:'国联证券'},
+        {i:'03',name:'联储证券'},
+        {i:'04',name:'申银万国期货'},
+        {i:'05',name:'华泰证券'},
+        {i:'06',name:'信达证券'},
+        {i:'07',name:'财通证券'},
+        {i:'08',name:'华泰期货'},
+        {i:'09',name:'中融汇信'},
+        {i:'10',name:'国贸·期货'},
+        {i:'11',name:'宝城期货'},
+        {i:'12',name:'通惠期货有限公司'},
+        {i:'13',name:'广州金融控股集团有限公司'},
+        {i:'14',name:'信达期货'},
+        {i:'15',name:'国联期货'},
+        {i:'16',name:'东海期货'}
+      ], // 合作单位列表
+      showcomplist: [{i:'01',name:'东海证券'},
+        {i:'02',name:'国联证券'},
+        {i:'03',name:'联储证券'},
+        {i:'04',name:'申银万国期货'}], // 当前展示列表
+      currindex: 0 // 当前开始索引
     }
   },
   methods: {
@@ -211,12 +234,23 @@ export default {
         $("#adapter").css("padding-bottom",$("#graphic_p3").height())
       }
     },
-    handleWindowResize(event) {
+    handleWindowResize: function(event) {
       if (this.timeoutHandle){
          window.clearTimeout(this.timeoutHandle);
       }
-
       this.timeoutHandle = window.setTimeout(this.svgResize, 50);
+    },
+    preimg: function() {
+      if(this.currindex > 0) {
+          this.currindex --;
+          this.showcomplist = this.complist.slice(this.currindex,this.currindex+4);
+      }
+    },
+    nextimg: function() {
+      if(this.currindex >= 0 && this.currindex < 15) {
+          this.currindex ++;
+          this.showcomplist = this.complist.slice(this.currindex,this.currindex+4);
+      }
     }
   },
   beforeDestroy: function () {
@@ -236,7 +270,7 @@ export default {
         // vm.errstate = true
         // vm.errmsg = '接口请求异常！'
     });
-    api.getNews().then(function (res) {
+    api.getNews(1).then(function (res) {
         for (var i = 0;i<2;i++) {
             _.newsList.push(res.list[i]);
         }
@@ -255,49 +289,9 @@ export default {
         autoplay: 2000,
         paginationClickable: true
       });
-    }, 100)
-    // $(".nav-home a,.logo a").click(function(){
-    //   var ahash = this.hash;
-    //   var target = $(ahash);
-    //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-    //       if (target.length) {
-    //         var $li = $(this).closest("li");
-    //         var navHeight = 70;
-    //         $('html,body').animate({
-    //           scrollTop: target.offset().top
-    //         }, 1000,function(){
-    //           // window.location.hash = ahash;
-    //           if($li.length){
-    //             $li.siblings(".active").removeClass("active");
-    //             $li.addClass("active");
-    //           }
-
-    //         });
-    //     }
-    //       return false;
-    // })
-
-/*    var popoverTemplate = ['<div class="popover">',
-          '<div class="arrow"></div>',
-          '<div class="social-at"><div class="popover-title"></div>@verasti</div>',
-          '<div class="popover-content">',
-          '</div>',
-          '</div>'].join('');
-    $('.social a').popover({
-      html:true,
-      template:popoverTemplate
-    });
-*/
+    }, 100);
     this.svgResize();
     window.addEventListener('resize', this.handleWindowResize);
-    
-    // new Vivus('graphic_p1', {type:'scenario'}, function(){});
-    // new Vivus('graphic_p2', {type: 'sync',duration: 100}, function(){
-    //   $(".img-1010").css({'animation':'none',"-webkit-animation":"none"});
-    //   $(".img-1010-2").css({'display':'none'});
-    // });
-    // new Vivus('graphic_p3', {type: 'scenario'}, function(){});
-  
   }
 }
 </script>

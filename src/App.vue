@@ -54,7 +54,7 @@ export default {
         done();
       // });
     },
-    handleWindowResize(event) {
+    handleWindowResize: function(event) {
       if (!Modernizr.cssvhunit) {
           $(".banner").css("height",$(window).height());
         }

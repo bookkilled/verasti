@@ -9,7 +9,7 @@ const DEV_ENV = process.env.DEV_ENV || ''
 // const domain = (DEV_ENV === 'production')
 // 	? `${location.protocol}//admin.verasti.com`
 //   : `${location.protocol}//116.62.165.234`
-const domain = `${location.protocol}//116.62.165.234`;
+const domain = location.protocol+'//116.62.165.234';
 // const domain = ( DEV_ENV.replace(/\s/g,"") === 'production')
 // 	? `http://devwww.ineleadbank.com.cn`
 //   : `http://devwww.ineleadbank.com.cn`
@@ -19,7 +19,7 @@ const Hmethod = 'GET'
 // 获取banner地址
 export function getBanner() {
   return reqwest({
-    url: `${domain}/foreign/banners`,
+    url: domain+'/foreign/banners',
     method: Hmethod,
     type: 'jsonp',
     timeout: setTimeout,
@@ -29,21 +29,24 @@ export function getBanner() {
 }
 
 // 获取新闻列表
-export function getNews() {
+export function getNews(pageNo) {
     return reqwest({
-      url: `${domain}/foreign/news`,
+      url: domain+'/foreign/news',
       method: Hmethod,
       type: 'jsonp',
       timeout: setTimeout,
       contentType: 'application/json;charset=UTF-8',
-      data: {}
+      data: {
+        pageNo: pageNo,
+        pageSize: 4
+      }
     })
 }
 
 // 获取新闻详情
 export function getNewsDstail(id) {
     return reqwest({
-      url: `${domain}/foreign/news/` + id,
+      url: domain+'/foreign/news/' + id,
       method: Hmethod,
       type: 'jsonp',
       timeout: setTimeout,

@@ -211,8 +211,7 @@ video {
   min-height: 100%;
   z-index: 0;
   transition: 1s opacity;
-  /*background: url('http://demosthenes.info/assets/images/polina.jpg') no-repeat;*/
-    background-size: cover;
+  background-size: cover;
 }
 .arrow-down {
     color: rgb(255, 255, 255);
@@ -320,6 +319,16 @@ video {
 	-ms-flex-align: center;
 	-webkit-align-items: center;
 	align-items: center;
+}
+.bg_img {
+	position: absolute;
+	top:0;
+	left: 0;
+	min-width: 100%;
+	min-height: 100%;
+	z-index: 0;
+	transition: 1s opacity;
+	background-size: cover;
 }
 /*.bg-banner:after{
 	content:'';
@@ -914,8 +923,30 @@ section p{
 	height: 362px;
 	margin: 0 auto;
 }
+.companybox .imglist .citem {
+	height: 362px;
+    background: #FFF;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-right: 10px solid #22405a;
+}
+.companybox .imglist .citem img {
+	position: absolute;
+    left: 0;
+    right: 0;
+    margin: 61px auto;
+}
+.companybox .imglist .citem span {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	padding-top: 10px;
+	border-top: 1px solid #131313;
+	color: #131313;
+}
 .companybox .imglist .row {
-	margin-right: 0;
+	margin-left: 0;
 }
 .imglist .row div {
 	cursor: pointer;
@@ -1984,17 +2015,33 @@ section .title{
 	.adapter .complist .compbox {
 		width: max-content;
 		padding: 0 0 0 10px;
+		height: 100%;
 	}
 	.adapter .complist .compitem {
 		float: left;
 		margin-right: 8px;
 		width: 40vw;
+		height: 100%;
+		background: #FFF;
+		position: relative;
 	}
 	.partner .pimglist .row {
 		width: 100%;
 	}
-	.partner .pimglist .row img {
-		margin-top: 20px;
+	.adapter .complist img {
+		position: absolute;
+		top: 5vh;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+	.adapter .complist span {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+		padding-top: 6px;
+		border-top: 1px solid #131313;
+		color: #131313;
 	}
 	.partner .pimglist {
 		padding: 0;
