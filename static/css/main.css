@@ -1999,7 +1999,8 @@ section .title{
 	}
 	.swiper-container img {
 		height: 100vh;
-		width: 100%;
+		width: auto;
+		margin-left: -50%;
 	}
 	.basic {height: auto;}
 	.basic .advantagebox .tit {
