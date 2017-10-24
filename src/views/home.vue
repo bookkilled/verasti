@@ -183,7 +183,6 @@
 <script>
 import * as api from '../api'
 import Swiper from 'swiper';
-import 'swiper/dist/css/swiper.min.css';
 export default {
   data:function () {
     return {
@@ -224,11 +223,11 @@ export default {
     window.removeEventListener('resize', this.handleWindowResize)
   },
   //定义这个sweiper对象  
-  computed: {  
-      swiper() {  
-        return this.$refs.mySwiper.swiper;  
-      }  
-  },
+  // computed: {  
+  //     swiper() {  
+  //       return this.$refs.mySwiper.swiper;  
+  //     }  
+  // },
   mounted:function (){
     var _ = this;
     api.getBanner().then(function (res) {
