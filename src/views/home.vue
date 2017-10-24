@@ -145,7 +145,7 @@
           </div>
           <div class="complist" v-else>
             <div class="compbox clearfix">
-              <div class="compitem" v-for="(item,index) in showcomplist" :key="index">
+              <div class="compitem" v-for="(item,index) in complist" :key="index">
                 <img v-bind:src="'../../static/img/'+item.i+'.png'" width="100%" alt="" />
                 <span>{{ item.name }}</span>
               </div>
@@ -247,7 +247,7 @@ export default {
       }
     },
     nextimg: function() {
-      if(this.currindex >= 0 && this.currindex < 15) {
+      if(this.currindex >= 0 && this.currindex < 11) {
           this.currindex ++;
           this.showcomplist = this.complist.slice(this.currindex,this.currindex+4);
       }
