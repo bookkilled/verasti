@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
-Vue.use(VueAwesomeSwiper)
 Vue.use(Router)
 
 export default new Router({

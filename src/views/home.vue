@@ -27,7 +27,7 @@
                   <source v-bind:src="dk.coverImageUrl" type="video/mp4">
                  </video>
                  <div v-else>
-                   <img v-bind:src="dk.coverImageUrl">
+                   <img v-bind:src="dk.coverImageUrl" width="100%">
                  </div>
               </div>
             </div>
@@ -35,10 +35,10 @@
             <div class="swiper-pagination"></div>
           </div>
         </div>
-        <!-- <div class="intro text-center">
+        <div class="intro text-center">
           <h1 class="wow fadeInLeft" data-wow-delay=".1s" data-wow-duration="1.5s">FIND AND TRADE WHAT YOU <br class="hidden-xs">NEED THROUGH THE NETWORK YOU<br class="hidden-xs"> ALREADY TRUST</h1>
           <p class="wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1.5s">VERASTI开创了统一的跨市场交易入口，构建了一个连接金融机构、交易型私募基金的网络</p>
-        </div> -->
+        </div>
       </div>
       <div class="arrow-down" v-if="!pcsite"></div>
     </section>
@@ -184,12 +184,7 @@
 import * as api from '../api'
 import Swiper from 'swiper';
 import 'swiper/dist/css/swiper.min.css';
-// import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
-  // components: {  
-  //           swiper,  
-  //           swiperSlide  
-  // },  
   data:function () {
     return {
       pcsite: /(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent) ? false : true,
@@ -197,23 +192,7 @@ export default {
     	home: true,
       title:"Home",
       bannerList: [], // banner列表
-      newsList: [], // 新闻列表
-      swiperOption: {  
-        //是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true  
-        notNextTick: true,  
-        autoplay: 3000,
-        speed:3000,
-        pagination: '.swiper-pagination',  
-        slidesPerView: 'auto',  
-        // setWrapperSize :true,
-        centeredSlides: true,  
-        paginationClickable: true,  
-        onSlideChangeEnd: swiper => {  
-            //这个位置放swiper的回调方法  
-            this.page = swiper.realIndex+1;  
-            this.index = swiper.realIndex;  
-        } 
-      } 
+      newsList: [] // 新闻列表
     }
   },
   methods: {
