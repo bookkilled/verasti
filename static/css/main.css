@@ -1993,7 +1993,7 @@ section .title{
 	.contact-forms .form{margin-bottom: 15px;}
 	.banner.contact {overflow:initial;}
 }
-@media (max-width: 640px){
+@media (max-width: 767px){
 	header .logo svg {width:137px;}
 	.banner {
 
@@ -2051,6 +2051,9 @@ section .title{
 	}
 	.partner .pimglist {
 		padding: 0;
+	}
+	.partner .pimglist .col-xs-6 {
+		margin-bottom: 20px;
 	}
 	.partner .bannerbg {padding-bottom: 40px;}
 	.partner .container {width: 100%;}
