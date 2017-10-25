@@ -6,6 +6,10 @@
             <div class="rleft col-sm-6 col-xs-6"></div>
             <div class="rright col-sm-6 col-xs-6"></div>
         </div>
+        <div class="bgtxt">
+            <h1 class="wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1.5s">WHAT IS VERASTI?</h1>
+            <p class="wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1.5s">他是一个匹配金融交易各方的网络</p>
+        </div>
     </section>
     <section class="newsbox" v-if="pcsite">
         <div class="newsLine"></div>

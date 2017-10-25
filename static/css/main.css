@@ -1522,6 +1522,7 @@ section .title{
 	overflow: hidden;
 	position: relative;
 	margin-bottom: 60px;
+	padding-bottom: 70px;
 }
 .newsbox h1 {
 	text-align: center;
@@ -1867,7 +1868,7 @@ section .title{
 	    font-size: 14px;
 	}
 	.caption.txtXL/*,#player .caption*/ {
-	    font-size: 30px;
+	    font-size: 24px;
 	}
 	.caption small {
 	    font-size: 20px;
@@ -2000,15 +2001,16 @@ section .title{
 	.swiper-container img {
 		height: 100vh;
 		width: auto;
-		margin-left: -50%;
+		margin-left: -100%;
 	}
 	.basic {height: auto;}
 	.basic .advantagebox .tit {
 		border-left: solid 4px #e5bf87;
-		height: 34px;
-		line-height: 34px;
+		height: 28px;
+		line-height: 28px;
 		padding-left: 20px;
-		font-size: 26px;
+		font-size: 22px;
+		margin-top: 20px;	
 	}
 	.adapter .complist {
 		width: 100%;
@@ -2139,6 +2141,15 @@ section .title{
 		height: 24px;
 		width: 50%;
 	}
+	.bgtxt {
+		width: 100%;
+		color: #fff;
+		z-index: 2;
+		padding-top: 10%;
+		text-align: center;
+	}
+	.bgtxt h1 {}
+	.bgtxt p {}
 }
 @media (min-width: 768px) {
     .nav-home .navbar-nav>li>a {
