@@ -1992,8 +1992,8 @@ section .title{
 	}
 	.contact-forms .form{margin-bottom: 15px;}
 	.banner.contact {overflow:initial;}
-}
-@media (max-width: 767px){
+/* } */
+/* @media (max-width: 767px){ */
 	header .logo svg {width:137px;}
 	.banner {
 
@@ -2059,7 +2059,7 @@ section .title{
 	.partner .container {width: 100%;}
 	.partner .txt-orange { font-size: 12px; }
 	.partner .caption.txtXL {font-size: 24px;}
-	.newsbox {width: auto;margin-bottom: 0;}
+	.newsbox {width: auto;margin-bottom: 0;padding-bottom: 0;}
 	.newsbox .mitem {margin: 40px 4%;padding:2% 4%;background-color: rgba(255, 255, 255, 0.28);color: #FFF;position: relative;}
 	.newsbox .mitem p {
 		margin: 10px 0 0 0;
@@ -2128,8 +2128,10 @@ section .title{
 		margin-bottom: 0;
 		border-top: 2px solid #22405a;
 	}
-	.news .newsbg {
+	.news .banner.newsbg {
 		height: 200px;
+		display: table;
+		width: 100%;
 	}
 	.news .roundline {height: 24px;}
 	.news .roundline .rleft {
@@ -2148,8 +2150,9 @@ section .title{
 		width: 100%;
 		color: #fff;
 		z-index: 2;
-		padding-top: 10%;
+		display: table-cell;
 		text-align: center;
+		vertical-align: middle;
 	}
 	.bgtxt h1 {}
 	.bgtxt p {}
