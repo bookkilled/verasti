@@ -39,13 +39,13 @@ export default {
     props: ['title','navhome'],
     mounted: function(){
     	$('header').on('click','.navbar-toggle',function(){
-			$(".nav-wrap").addClass("in");
-			// $(".nav-wrap .closebtn").removeClass("out");
-			$(".navbar-toggle").css({
-				    'marginTop': '-40px',
-    				'marginRight': '72%'
-			})
-		})
+				// $(".nav-wrap .closebtn").removeClass("out");
+				$(".navbar-toggle").css({
+							'marginTop': '-40px',
+							'marginRight': '72%'
+				});
+				$(".nav-wrap").addClass("in");
+		});
 		// $('header').on('click',".nav-wrap .closebtn",function(){
 		// 	$(this).addClass("out");
 		// 	$(".nav-wrap").delay(300).animate({height:0},300,function(){

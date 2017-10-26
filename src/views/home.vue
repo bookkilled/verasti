@@ -87,7 +87,7 @@
           <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".5s">memorabilia<br><small class="txt-white">公司大事记</small>
           </h1>
           <div class="riskbox wow fadeInUp" data-wow-delay=".5s">
-            <div v-for="(el,index) in newsList" :key="index" :class="[index == 1 ? 'itema' : 'itemb', 'item']">
+            <div v-for="(el,index) in newsList" :key="index" :class="[index == 0 ? 'itema' : 'itemb', 'item']">
               <span class="ndate">{{ el.postDate }}</span>
               <div class="ndetail">
                 <p class="p1">{{ el.title }}</p>

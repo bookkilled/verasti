@@ -23,7 +23,7 @@
       </div>
     </div>
   </section>
-	<section>
+	<section class="pimgbox">
     <div class="pimglist bc22405a">
       <div class="row">
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_1.jpg" alt="" /></div>

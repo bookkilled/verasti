@@ -24,14 +24,14 @@
           </div>
       </div>
       </div>
-      <div class="menu-el">
+      <!-- <div class="menu-el">
       <div class="wrap-right">
         <div class="logo-wrap">
           <div class="logo-circle"></div>
           <router-link to="/home"><div class="logo_s"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="60" viewBox="0 0 67.6 101.3"><path class="logo-v" fill="#fff" d="M43.1 0l7.6 13.1-26.2 15.1-7.6-13.1L43.1 0zM19.3 33.8c0 25.4 1.2 41.2 14.5 48.3 13.3-7 14.5-22.9 14.5-48.3h19.3c0 50.8-14.4 61.8-33.8 67.6C14.4 95.6 0 84.6 0 33.8h19.3z"/></svg></div></router-link>
         </div>
       </div>
-      </div>
+      </div> -->
       <div class="clearfix"></div>
     </div>
   </div>
