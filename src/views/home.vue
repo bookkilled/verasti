@@ -114,16 +114,16 @@
     <section class="newsbox" style="background: #193044" v-else>
         <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".5s">MEMORABILIA<br><small class="txt-white">公司大事记</small>
         </h1>
-        <div class="mitem" v-for="(el,index) in newsList" :key="index">
+        <a v-bind:href="'/newsdetail?pageid='+el.id" class="mitem wow fadeInLeft" data-wow-delay=".2s" v-for="(el,index) in newsList" :key="index">
             <div v-bind:class="['mline',(index == 0 ? 'first' : '')]"></div>
             <span class="mpointer"></span>
             <p class="mdate">{{ el.postDate }}</p>
             <p class="mtit">{{ el.title }}</p>
             <p class="msummary">{{ el.summary }}</p>
             <p class="ming"><img v-bind:src="el.coverImageUrl" width="100%"></p>
-            <p style="text-align:right"><a v-bind:href="'/newsdetail?pageid='+el.id" class="mlink">查看全部</a></p>
+            <p style="text-align:right"><span class="mlink">查看全部</span></p>
             <div v-if="index == newsList.length-1" class="lastline"></div>
-        </div>
+        </a>
         <a href="/news" class="morelink">更多大事记 >></a>
     </section>
     <section id="adapter" class="adapter">
@@ -168,7 +168,7 @@
             <p><span class="ctel">0571-81999811</span><span class="cemail">nuoee@nuoee.com</span></p>
             <p class="mt10"><span class="caddress">上海市，威海路696弄 | 杭州，江干区庆春东路西子国际C座2402室</span></p>
           </div>
-          <div class="cinfom" v-else>
+          <div class="cinfom wow fadeInLeft" data-wow-delay=".2s" v-else>
             <p><span class="ctel">0571-81999811</span></p>
             <p><span class="cemail">nuoee@nuoee.com</span></p>
             <p><span class="caddress">上海市，威海路696弄 | 杭州，江干区庆春东路西子国际C座2402室</span></p>

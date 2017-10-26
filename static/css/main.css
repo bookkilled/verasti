@@ -929,6 +929,7 @@ section p{
 	height: 362px;
 	margin-top: 74px;
 	margin-bottom: 86px;
+	overflow: hidden;
 }
 .adapter .companybox .bleft {
 	position: absolute;
@@ -2105,7 +2106,7 @@ section .title{
 	.partner .txt-orange { font-size: 12px; }
 	.partner .caption.txtXL {font-size: 24px;}
 	.newsbox {width: auto;margin-bottom: 0;padding-bottom: 0;}
-	.newsbox .mitem {margin: 40px 4%;padding:2% 4%;background-color: rgba(255, 255, 255, 0.28);color: #FFF;position: relative;}
+	.newsbox .mitem {margin: 40px 4%;padding:2% 4%;background-color: rgba(255, 255, 255, 0.28);color: #FFF;position: relative;display: block;}
 	.newsbox .mitem p {
 		margin: 10px 0 0 0;
 	}

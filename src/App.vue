@@ -126,28 +126,26 @@ export default {
   },
   mounted:function (){
       var _ = this;
-      $('.navbar-toggle').on('click',function(){
+      $('.navbar-toggle').on('click',function(e){
           // console.log('12323');
+          e.stopPropagation(); 
           $(".nav-wrap").addClass("in");
           $(this).css({
             'right': '74%'
           });
       });
       var path = this.$route.path;
-      $(".nav-wrap").click(function(){
-        var target = $(this);
-        console.log(target);
-        if(target.closest(".menu-el").length != 0)
-        {
+      $(".nav-wrap").click(function(e){
+        e.stopPropagation(); 
             setTimeout(function(){
               $(".nav-wrap").removeClass("in");
               $('.navbar-toggle').css({
                 'right': '20px'
               });
             },500);
-        }
       });
-      $(".menu-el a").click(function(){
+      $(".menu-el a").click(function(e){
+        e.stopPropagation(); 
         _.navhome = location.href.split('/')[3] || 'home';
         setTimeout(function(){
           $(".nav-wrap").removeClass("in");

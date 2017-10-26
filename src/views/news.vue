@@ -1,7 +1,7 @@
 <template>
   <div class="news">
 	<app-header :title="title" navhome='news'></app-header>
-	<section class="banner newsbg" style="height:200px">
+	<section class="banner newsbg">
         <div class="roundline row">
             <div class="rleft col-sm-6 col-xs-6"></div>
             <div class="rright col-sm-6 col-xs-6"></div>
@@ -50,16 +50,16 @@
     <section class="newsbox" v-else>
         <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".2s">MEMORABILIA<br><small class="txt-white">公司大事记</small>
         </h1>
-        <div class="mitem" v-for="(el,index) in newsList" :key="index">
+        <a v-bind:href="'/newsdetail?pageid='+el.id" class="mitem wow fadeInLeft" data-wow-delay=".2s" v-for="(el,index) in newsList" :key="index">
             <div v-bind:class="['mline',(index == 0 ? 'first' : '')]"></div>
             <span class="mpointer"></span>
             <p class="mdate">{{ el.postDate }}</p>
             <p class="mtit">{{ el.title }}</p>
             <p class="msummary">{{ el.summary }}</p>
             <p class="ming"><img v-bind:src="el.coverImageUrl" width="100%"></p>
-            <p style="text-align:right"><a v-bind:href="'/newsdetail?pageid='+el.id" class="mlink">查看全部</a></p>
+            <p style="text-align:right"><span class="mlink">查看全部</span></p>
             <div v-if="index == newsList.length-1" class="lastline"></div>
-        </div>
+        </a>
     </section>
     <a href="javascript:;" class="morelink" @click="getMore">{{ liststips }}</a>
 	<app-footer></app-footer>
