@@ -636,6 +636,11 @@ section p{
 .basic .container, .adapter .container, .social .container, .rules .container, .risk .container, .navbar .container {
 	min-width: 1170px;
 }
+@media (max-width: 767px){
+	.basic .container, .adapter .container, .social .container, .rules .container, .risk .container, .navbar .container {
+		min-width: 100%;
+	}
+}
 /*#player .caption{
 	font-family: 'franklin-gothic',"Helvetica Neue",Helvetica, sans-serif;
 	font-size: 44px;
