@@ -618,7 +618,7 @@ section p{
 	margin-top: 36px;
 }
 .rules .caption {
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
 .rules h3.caption{
 	margin-bottom: 20px;
@@ -1515,6 +1515,8 @@ section .title{
 	height: 430px;
 	background: url('../img/news_banner.jpg') center center no-repeat;
 	background-size: cover;
+	display: table;
+    width: 100%;
 }
 .newsbox {
 	width: 1200px;
@@ -1657,6 +1659,14 @@ section .title{
 	bottom: 0;
 	left: 0;
 	right: 0;
+}
+.bgtxt {
+	width: 100%;
+	color: #fff;
+	z-index: 2;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
 }
 .news .roundline .rleft {
 	border-top-right-radius: 54px;
@@ -2264,7 +2274,7 @@ footer .gotop {
     left: 50%;
     width: 44px;
     height: 44px;
-    margin-left: 630px;
+    margin-left: 580px;
 	background: url(../img/ndt_img.png) center center no-repeat;
 	cursor: pointer;
 }

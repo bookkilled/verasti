@@ -160,11 +160,11 @@
         <div class="row content text-center">
           <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".5s">CONTACT US<br><small class="txt-white">联系我们</small>
           </h1>
-          <p class="wxtit">微信公众号：VERASTI</p>
-          <p class="qrcode">
+          <p class="wxtit wow fadeInRight" data-wow-delay=".6s">微信公众号：VERASTI</p>
+          <p class="qrcode wow fadeInRight" data-wow-delay=".7s">
             <img src="../assets/qrcode.jpg">
           </p>
-          <div class="cinfo" v-if="pcsite">
+          <div class="cinfo wow fadeInRight" data-wow-delay=".6s" v-if="pcsite">
             <p><span class="ctel">0571-81999811</span><span class="cemail">nuoee@nuoee.com</span></p>
             <p class="mt10"><span class="caddress">上海市，威海路696弄 | 杭州，江干区庆春东路西子国际C座2402室</span></p>
           </div>
@@ -175,7 +175,7 @@
           </div>
         </div>
       </div>
-      <div class="arrow-down"></div>
+      <!-- <div class="arrow-down"></div> -->
     </section>
     <app-footer :class="{'at-home':home}"></app-footer>
   </div>
