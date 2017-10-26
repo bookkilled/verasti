@@ -25,7 +25,7 @@
   </section>
 	<section class="pimgbox">
     <div class="pimglist bc22405a">
-      <div class="row">
+      <div class="row wow fadeInLeft" data-wow-delay=".2s">
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_1.jpg" alt="" /></div>
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_2.jpg" alt="" /></div>
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_3.jpg" alt="" /></div>
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="pimglist bc203b54">
-      <div class="row">
+      <div class="row wow fadeInLeft" data-wow-delay=".2s">
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_5.jpg" alt="" /></div>
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_6.jpg" alt="" /></div>
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_7.jpg" alt="" /></div>
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="pimglist bc22405a">
-      <div class="row">
+      <div class="row wow fadeInLeft" data-wow-delay=".2s">
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_9.jpg" alt="" /></div>
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_10.jpg" alt="" /></div>
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_11.jpg" alt="" /></div>
@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="pimglist bc203b54">
-      <div class="row">
+      <div class="row wow fadeInLeft" data-wow-delay=".2s">
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_13.jpg" alt="" /></div>
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_14.jpg" alt="" /></div>
           <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_15.jpg" alt="" /></div>

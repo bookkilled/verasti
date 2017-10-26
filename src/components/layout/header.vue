@@ -21,11 +21,7 @@
 				<li v-bind:class="{'active': navhome == 'contact'}"><router-link to="/contact"><span>关于我们</span></router-link></li>
 			</ul>
 		</nav>
-		<a class="btn navbar-toggle" v-else>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	    </a>
+
 	    </div>
 	</header>
 </template>
@@ -38,43 +34,14 @@ export default {
 		},
     props: ['title','navhome'],
     mounted: function(){
-    	$('header').on('click','.navbar-toggle',function(){
-				// $(".nav-wrap .closebtn").removeClass("out");
-				$(".navbar-toggle").css({
-							'marginTop': '-40px',
-							'marginRight': '72%'
-				});
-				$(".nav-wrap").addClass("in");
-		});
+    	
 		// $('header').on('click',".nav-wrap .closebtn",function(){
 		// 	$(this).addClass("out");
 		// 	$(".nav-wrap").delay(300).animate({height:0},300,function(){
 		// 		$(this).removeClass("in").css("height","");
 		// 	})
 		// })
-		var path = this.$route.path;
-		$(".nav-wrap a").click(function(){
-			if ($(this).attr("href")===undefined||$(this).attr("href").substr(0,path.length)===path) {
-				// if($(this).hasClass("closebtn")){
-			  //       $(this).addClass("out");
-				// }
-				$(".nav-wrap .menu-el > div").each(function() {
-					$(this).css({
-					    "-webkit-transform":"translateX(100%)",
-					    "-ms-transform":"translateX(100%)",
-					    "transform":"translateX(100%)"
-					  });
-					var $el = $(this);
-					setTimeout(function(){
-						$(".nav-wrap").removeClass("in");
-						$el.css({					    
-							"-webkit-transform":"",
-						    "-ms-transform":"",
-						    "transform":""});
-					}, 500);
-				})
-			}
-		})
+		
     }
   }
 </script>

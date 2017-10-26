@@ -86,14 +86,14 @@
         <div class="row content text-center">
           <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".5s">memorabilia<br><small class="txt-white">公司大事记</small>
           </h1>
-          <div class="riskbox wow fadeInUp" data-wow-delay=".5s">
+          <div class="riskbox wow fadeInUp" data-wow-delay=".3s">
             <div v-for="(el,index) in newsList" :key="index" :class="[index == 0 ? 'itema' : 'itemb', 'item']">
               <span class="ndate">{{ el.postDate }}</span>
-              <div class="ndetail">
+              <a v-bind:href="'/newsdetail?pageid='+el.id" class="ndetail">
                 <p class="p1">{{ el.title }}</p>
                 <p class="p2">{{ el.summary }}</p>
-                <a class="link" v-bind:href="'/newsdetail?pageid='+el.id">查看全部</a>
-              </div>
+                <span class="link">查看全部</span>
+              </a>
             </div>
             <!-- <div class="itemb item">
               <span class="ndate">2017-09-04</span>
@@ -244,12 +244,38 @@ export default {
       if(this.currindex > 0) {
           this.currindex --;
           this.showcomplist = this.complist.slice(this.currindex,this.currindex+4);
+      } else {
+        this.currindex --;
+        if (this.currindex == 0) {
+          this.showcomplist = this.complist.slice(12,15).concat(this.complist.slice(0,1));
+        }
+        else if (this.currindex == -1) {
+          this.showcomplist = this.complist.slice(13,15).concat(this.complist.slice(0,2));
+        }
+        else if (this.currindex == -2) {
+          this.showcomplist = this.complist.slice(14,15).concat(this.complist.slice(0,3));
+        } else {
+          this.currindex = 12;
+        }
+        // if (this.currindex > 10 && this.currindex < 16) {
+            // this.currindex --;
+            console.log(this.currindex,this.complist.length);
+            // this.showcomplist = this.complist.slice(Math.abs(this.currindex),this.complist.length).concat(this.complist.slice(0,4-(this.complist.length+this.currindex)));
+        // }
       }
     },
     nextimg: function() {
       if(this.currindex >= 0 && this.currindex < 11) {
           this.currindex ++;
           this.showcomplist = this.complist.slice(this.currindex,this.currindex+4);
+      } else {
+        if (this.currindex > 10 && this.currindex < 16) {
+          this.currindex ++;
+          this.showcomplist = this.complist.slice(this.currindex,this.complist.length).concat(this.complist.slice(0,4-(this.complist.length-this.currindex)));
+        } else {
+          this.currindex = 0;
+          this.showcomplist = this.complist.slice(this.currindex,this.currindex+4);
+        }
       }
     }
   },

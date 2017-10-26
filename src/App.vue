@@ -10,16 +10,21 @@
     </transition>
     <div class="nav-wrap">
       <!-- <a class="closebtn"><span></span><span></span></a> -->
+      <a class="btn navbar-toggle" v-if="!pcsite">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	    </a>
       <div class="menu-el">
       <div class="wrap-left">
           <div class="navbar-wrap">
             <ul class="nav navbar-nav">
-              <li><a class="apphome" href="/home">首页</a></li>
-              <li><a class="appsolution" href="/solution">产品</a></li>
-              <li><a class="appnews" href="/news">大事记</a></li>
-              <li><a class="apppartner" href="/partner">合作伙伴</a></li>
-              <li><a class="appculture" href="/culture">企业文化</a></li>
-              <li><a class="appcontact" href="/contact">关于我们</a></li>
+              <li><router-link class="apphome" to="/home">首页</router-link></li>
+              <li><router-link class="appsolution" to="/solution">产品</router-link></li>
+              <li><router-link class="appnews" to="/news">大事记</router-link></li>
+              <li><router-link class="apppartner" to="/partner">合作伙伴</router-link></li>
+              <li><router-link class="appculture" to="/culture">企业文化</router-link></li>
+              <li><router-link class="appcontact" to="/contact">关于我们</router-link></li>
             </ul>
           </div>
       </div>
@@ -40,6 +45,11 @@
 <script>
 
 export default {
+  data: function () {
+			return {
+				pcsite: /(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent) ? false : true
+			}
+		},
   name: 'app',
   methods: {
     enter: function enter(el, done) {
@@ -108,6 +118,42 @@ export default {
     window.removeEventListener('resize', this.handleWindowResize)
   },
   mounted:function (){
+      $('.navbar-toggle').on('click',function(){
+          // console.log('12323');
+          $(".nav-wrap").addClass("in");
+          $(this).css({
+            'right': '74%'
+          });
+      });
+      var path = this.$route.path;
+      $(".menu-el a").click(function(){
+        setTimeout(function(){
+          $(".nav-wrap").removeClass("in");
+          $('.navbar-toggle').css({
+            'right': '20px'
+          });
+        },500);
+        if ($(this).attr("href")===undefined||$(this).attr("href").substr(0,path.length)===path) {
+          // if($(this).hasClass("closebtn")){
+          //       $(this).addClass("out");
+          // }
+          // $(".nav-wrap .menu-el > div").each(function() {
+            // $(this).css({
+            //     "-webkit-transform":"translateX(100%)",
+            //     "-ms-transform":"translateX(100%)",
+            //     "transform":"translateX(100%)"
+            //   });
+            // var $el = $(this);
+            // setTimeout(function(){
+            //   $(".nav-wrap").removeClass("in");
+            //   $el.css({					    
+            //     "-webkit-transform":"",
+            //       "-ms-transform":"",
+            //       "transform":""});
+            // }, 500);
+          // })
+        }
+      })
       /*$.Velocity.defaults.easing = 'easeInOutCubic';
       var chars = ['V','E','R','A','S','T','I','沃','廷'],
           charIndex= 0,
