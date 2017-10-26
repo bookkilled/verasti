@@ -2066,14 +2066,15 @@ section .title{
 		overflow-x: scroll;
 	}
 	.adapter .complist .compbox {
-		width: max-content;
+		/* width: max-content; */
+		width: 2540px;
 		padding: 0 0 0 10px;
 		height: 100%;
 	}
 	.adapter .complist .compitem {
 		float: left;
 		margin-right: 8px;
-		width: 40vw;
+		width: 150px;
 		height: 100%;
 		background: #FFF;
 		position: relative;
