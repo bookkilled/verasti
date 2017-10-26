@@ -2059,6 +2059,9 @@ section .title{
 		font-size: 22px;
 		margin-top: 20px;	
 	}
+	.adapter {
+		overflow: hidden;
+	}
 	.adapter .complist {
 		width: 100%;
 		padding-top: 10vh;
