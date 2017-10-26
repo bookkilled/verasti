@@ -257,6 +257,7 @@ export default {
           this.showcomplist = this.complist.slice(14,15).concat(this.complist.slice(0,3));
         } else {
           this.currindex = 12;
+          this.showcomplist = this.complist.slice(12,15).concat(this.complist.slice(0,3));
         }
         // if (this.currindex > 10 && this.currindex < 16) {
             // this.currindex --;
