@@ -32,7 +32,7 @@
               </div>
             </div>
             <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination" v-if="bannerList.length > 1"></div>
           </div>
         </div>
         <div class="intro text-center">

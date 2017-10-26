@@ -72,7 +72,7 @@ header .logo a:hover svg path{
 }
 .navbar-toggle{
 	position: absolute;
-    top: 10px;
+    top: 6px;
     right: 30px;
     width: 38px;
     height: 38px;
@@ -550,15 +550,15 @@ video {
 	background: url('../img/cinfo_em.jpg') left center no-repeat;
 }
 .rules .cinfom .ctel {
-	background: url('../img/cinfo_tel.jpg') left 14px no-repeat;
+	background: url('../img/cinfo_tel.jpg') left 10px no-repeat;
 }
 
 .rules .cinfom .caddress {
-	background: url('../img/cinfo_adr.jpg') left 14px no-repeat;
+	background: url('../img/cinfo_adr.jpg') left 10px no-repeat;
 }
 
 .rules .cinfom .cemail {
-	background: url('../img/cinfo_em.jpg') left 14px no-repeat;
+	background: url('../img/cinfo_em.jpg') left 10px no-repeat;
 }
 /*#player{
 	background:url('../img/home_bg.jpg') no-repeat fixed;
@@ -1665,7 +1665,7 @@ section .title{
 	color: #e5bf87;
 	text-align: center;
 	margin: 0 auto;
-	margin-bottom: 54px;
+	margin-bottom: 40px;
 }
 .morelink:hover,.morelink:focus {
 	color: #e5bf87;
@@ -1893,7 +1893,7 @@ section .title{
 	    display: none;
 	    visibility: hidden;
 	} */
-	.bgtxt h1 {font-size: 36px;}
+	.bgtxt h1 {font-size: 32px;}
 	.bgtxt p {font-size: 14px;}
 	header .logo {
 	    margin: 0 20px;
@@ -2062,10 +2062,14 @@ section .title{
 	.adapter {
 		overflow: hidden;
 	}
+	.adapter .content {
+		padding-top: 24px;
+		padding-bottom: 64px;
+	}
 	.adapter .complist {
 		width: 100%;
-		padding-top: 10vh;
-		height: 50vh;
+		padding-top: 10px;
+		height: 240px;
 		overflow-x: scroll;
 	}
 	.adapter .complist .compbox {
@@ -2113,7 +2117,7 @@ section .title{
 	.partner .container {width: 100%;}
 	.partner .txt-orange { font-size: 12px; }
 	.partner .caption.txtXL {font-size: 24px;}
-	.newsbox {width: auto;margin-bottom: 0;padding-bottom: 0;}
+	.newsbox {width: auto;margin-bottom: 0;padding-bottom: 0;padding-top: 24px;}
 	.newsbox .mitem {margin: 40px 4%;padding:2% 4%;background-color: rgba(255, 255, 255, 0.28);color: #FFF;position: relative;display: block;}
 	.newsbox .mitem p {
 		margin: 10px 0 0 0;
