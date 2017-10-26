@@ -1691,6 +1691,8 @@ section .title{
 	text-align: center;
 	vertical-align: middle;
 }
+.bgtxt h1 {font-size: 48px;}
+.bgtxt p {font-size: 18px;}
 .news .roundline .rleft {
 	border-top-right-radius: 54px;
 	background: #22405a;
@@ -1891,6 +1893,8 @@ section .title{
 	    display: none;
 	    visibility: hidden;
 	} */
+	.bgtxt h1 {font-size: 36px;}
+	.bgtxt p {font-size: 14px;}
 	header .logo {
 	    margin: 0 20px;
 	}
