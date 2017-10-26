@@ -244,6 +244,7 @@ export default {
       if(this.currindex > 0) {
           this.currindex --;
           this.showcomplist = this.complist.slice(this.currindex,this.currindex+4);
+          console.log(this.currindex,this.complist.length);
       } else {
         this.currindex --;
         if (this.currindex == 0) {
