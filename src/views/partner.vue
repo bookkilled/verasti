@@ -1,6 +1,6 @@
 <template>
   <div class="partner">
-	<app-header :title="title"></app-header>
+	<app-header :title="title" navhome='partner'></app-header>
 	<section class="banner bannerbg">
     <div class="container">
       <div class="row content text-center">

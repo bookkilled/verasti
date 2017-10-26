@@ -13,12 +13,12 @@
 		<!-- <span v-if="!navhome" class="page-title">{{title}}</span> -->
 		<nav class="nav-home hidden-xs hidden-sm" v-if="pcsite">
 			<ul v-bind:class="{'nav':true, 'navbar-nav':true, 'contact': navhome}">
-				<li><router-link to="/home"><span>首页</span></router-link></li>
-				<li><router-link to="/solution"><span>产品</span></router-link></li>
-				<li><router-link to="/news"><span>大事记</span></router-link></li>
-				<li><router-link to="/partner"><span>合作伙伴</span></router-link></li>
-				<li><router-link to="/culture"><span>企业文化</span></router-link></li>
-				<li><router-link to="/contact"><span>关于我们</span></router-link></li>
+				<li v-bind:class="{'active': navhome == 'home'}"><router-link to="/home"><span>首页</span></router-link></li>
+				<li v-bind:class="{'active': navhome == 'solution'}"><router-link to="/solution"><span>产品</span></router-link></li>
+				<li v-bind:class="{'active': navhome == 'news'}"><router-link to="/news"><span>大事记</span></router-link></li>
+				<li v-bind:class="{'active': navhome == 'partner'}"><router-link to="/partner"><span>合作伙伴</span></router-link></li>
+				<li v-bind:class="{'active': navhome == 'culture'}"><router-link to="/culture"><span>企业文化</span></router-link></li>
+				<li v-bind:class="{'active': navhome == 'contact'}"><router-link to="/contact"><span>关于我们</span></router-link></li>
 			</ul>
 		</nav>
 		<a class="btn navbar-toggle" v-else>

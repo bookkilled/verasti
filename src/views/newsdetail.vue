@@ -1,6 +1,6 @@
 <template>
   <div class="newsdetail">
-	<app-header :title="title"></app-header>
+	<app-header :title="title" navhome='news'></app-header>
 	<section class="banner newsdetailbg"></section>
   <section class="ndetailbox">
     <div class="row">

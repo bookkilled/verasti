@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-header :class="{'at-home':home}" :navhome='home' ></app-header>
+    <app-header :class="{'at-home':home}" navhome='home' ></app-header>
   	<section id="banner" class="banner home">
       <div class="fullpage">
         <div class="bg bg-banner">

@@ -1,6 +1,6 @@
 <template>
   <div class="news">
-	<app-header :title="title"></app-header>
+	<app-header :title="title" navhome='news'></app-header>
 	<section class="banner newsbg">
         <div class="roundline row">
             <div class="rleft col-sm-6 col-xs-6"></div>

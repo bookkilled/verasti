@@ -57,7 +57,7 @@
       </defs>
     </svg>
   </div>
-  <app-header ></app-header>
+  <app-header :title="title" navhome='solution'></app-header>
 	<!-- <app-header :title="title" :class="'at-solution'" ></app-header> -->
 	<section class="banner solution">
    <div class="fullpage">

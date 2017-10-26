@@ -1,6 +1,6 @@
 <template>
   <div>
-	<app-header :title="title"></app-header>
+	<app-header :title="title" navhome='team'></app-header>
 	<section class="banner"></section>
 	<section>team</section>
 	<app-footer></app-footer>

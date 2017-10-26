@@ -12,7 +12,7 @@
       </filter>
     </svg>
   </div>
-	<app-header :title="title"></app-header>
+	<app-header :title="title" navhome='career'></app-header>
 	<section class="banner career">
     <div class="fullpage">
       <div class="bg banner-career"></div>

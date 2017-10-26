@@ -633,6 +633,9 @@ section p{
 .rules .border-r{
 	border-right: 3px solid rgba(255,255,255,.2);
 }
+.basic .container, .adapter .container, .social .container, .rules .container, .risk .container, .navbar .container {
+	min-width: 1170px;
+}
 /*#player .caption{
 	font-family: 'franklin-gothic',"Helvetica Neue",Helvetica, sans-serif;
 	font-size: 44px;
@@ -1852,7 +1855,13 @@ section .title{
 	    width: calc(100% - 300px);
 	}
 }
-
+.swiper-slide img {
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 @media (max-width: 767px) {
 	.bg_video,.banner-video {
 	    display: none;
