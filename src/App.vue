@@ -19,12 +19,18 @@
       <div class="wrap-left">
           <div class="navbar-wrap">
             <ul class="nav navbar-nav">
-              <li><router-link class="apphome" to="/home">首页</router-link></li>
+              <!-- <li><router-link class="apphome" to="/home">首页</router-link></li>
               <li><router-link class="appsolution" to="/solution">产品</router-link></li>
               <li><router-link class="appnews" to="/news">大事记</router-link></li>
               <li><router-link class="apppartner" to="/partner">合作伙伴</router-link></li>
               <li><router-link class="appculture" to="/culture">企业文化</router-link></li>
-              <li><router-link class="appcontact" to="/contact">关于我们</router-link></li>
+              <li><router-link class="appcontact" to="/contact">关于我们</router-link></li> -->
+              <li v-bind:class="{'active': navhome == 'home'}"><router-link to="/home" class="apphome"><span>首页</span></router-link></li>
+              <li v-bind:class="{'active': navhome == 'solution'}"><router-link to="/solution" class="appsolution"><span>产品</span></router-link></li>
+              <li v-bind:class="{'active': navhome == 'news'}"><router-link to="/news" class="appnews"><span>大事记</span></router-link></li>
+              <li v-bind:class="{'active': navhome == 'partner'}"><router-link to="/partner" class="apppartner"><span>合作伙伴</span></router-link></li>
+              <li v-bind:class="{'active': navhome == 'career'}"><router-link to="/culture" class="appculture"><span>企业文化</span></router-link></li>
+              <li v-bind:class="{'active': navhome == 'contact'}"><router-link to="/contact" class="appcontact"><span>关于我们</span></router-link></li>
             </ul>
           </div>
       </div>
@@ -47,7 +53,8 @@
 export default {
   data: function () {
 			return {
-				pcsite: /(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent) ? false : true
+        pcsite: /(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent) ? false : true,
+        navhome: location.href.split('/')[3] || 'home'
 			}
 		},
   name: 'app',
@@ -65,9 +72,9 @@ export default {
       // });
     },
     handleWindowResize: function(event) {
-      if (!Modernizr.cssvhunit) {
-          $(".banner").css("height",$(window).height());
-        }
+      // if (!Modernizr.cssvhunit) {
+      //     $(".banner").css("height",$(window).height());
+      //   }
     },
     createCookie:function(name,value,days){
       if (days) {
@@ -118,6 +125,7 @@ export default {
     window.removeEventListener('resize', this.handleWindowResize)
   },
   mounted:function (){
+      var _ = this;
       $('.navbar-toggle').on('click',function(){
           // console.log('12323');
           $(".nav-wrap").addClass("in");
@@ -126,7 +134,21 @@ export default {
           });
       });
       var path = this.$route.path;
+      $(".nav-wrap").click(function(){
+        var target = $(this);
+        console.log(target);
+        if(target.closest(".menu-el").length != 0)
+        {
+            setTimeout(function(){
+              $(".nav-wrap").removeClass("in");
+              $('.navbar-toggle').css({
+                'right': '20px'
+              });
+            },500);
+        }
+      });
       $(".menu-el a").click(function(){
+        _.navhome = location.href.split('/')[3] || 'home';
         setTimeout(function(){
           $(".nav-wrap").removeClass("in");
           $('.navbar-toggle').css({
@@ -247,9 +269,9 @@ export default {
         $("html").addClass('ie IE' + version);
       }
 
-      if (!Modernizr.cssvhunit) {
-        $(".banner").css("height",$(window).height());
-      }
+      // if (!Modernizr.cssvhunit) {
+      //   $(".banner").css("height",$(window).height());
+      // }
       window.addEventListener('resize', this.handleWindowResize);
   }
 }

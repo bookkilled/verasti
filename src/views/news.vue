@@ -1,7 +1,7 @@
 <template>
   <div class="news">
 	<app-header :title="title" navhome='news'></app-header>
-	<section class="banner newsbg">
+	<section class="banner newsbg" style="height:200px">
         <div class="roundline row">
             <div class="rleft col-sm-6 col-xs-6"></div>
             <div class="rright col-sm-6 col-xs-6"></div>
@@ -14,13 +14,13 @@
     <section class="newsbox" v-if="pcsite">
         <div class="newsLine"></div>
         <div class="newsLeft">
-            <div class="newsModule" v-for="(el,index) in newsList" :key="index" v-if="(index+1)%2 == 1">
+            <a class="newsModule" v-for="(el,index) in newsList" :key="index" v-if="(index+1)%2 == 1" v-bind:href="'/newsdetail?pageid='+el.id">
                 <p class="newsModuleTitle wow fadeInLeft" data-wow-delay=".2s">{{ el.title }}</p>
                 <div class="newsModuleImg wow fadeInLeft" data-wow-delay=".2s"><img v-bind:src="el.coverImageUrl"></div>
-                <a v-bind:href="'/newsdetail?pageid='+el.id" class="newsModuleMore wow fadeInLeft" data-wow-delay=".2s">查看全部</a>
+                <span class="newsModuleMore wow fadeInLeft" data-wow-delay=".2s">查看全部</span>
                 <div class="clear"></div>
                 <span v-bind:class="{'whiteLeftLine wow fadeInLeft':true,'yellowLeftLine': index == 0}" v-bind:style="{top: '20%'}"  data-wow-delay=".2s">{{ el.postDate }}</span>
-            </div>
+            </a>
             <!-- <div class="newsModule" v-for="(el,index) in newsList" :key="index" v-if="index == 1">
                 <p class="newsModuleTitle">{{ el.title }}</p>
                 <div class="newsModuleImg"><img v-bind:src="el.coverImageUrl"></div>
@@ -30,13 +30,13 @@
             </div> -->
         </div>
         <div class="newsRight">
-            <div class="newsModule" v-for="(el,index) in newsList" :key="index" v-if="(index+1)%2 == 0">
+            <a class="newsModule" v-for="(el,index) in newsList" :key="index" v-if="(index+1)%2 == 0" v-bind:href="el.href">
                 <p class="newsModuleTitle wow fadeInRight" data-wow-delay=".2s">{{ el.title }}</p>
                 <div class="newsModuleImg wow fadeInRight" data-wow-delay=".2s"><img v-bind:src="el.coverImageUrl"></div>
-                <a v-bind:href="el.href" class="newsModuleMore wow fadeInRight" data-wow-delay=".2s">查看全部</a>
+                <span class="newsModuleMore wow fadeInRight" data-wow-delay=".2s">查看全部</span>
                 <div class="clear"></div>
                 <span class="whiteRightLine wow fadeInRight" v-bind:style="{bottom: '20%'}"  data-wow-delay=".2s">{{ el.postDate }}</span>
-            </div>
+            </a>
             <!-- <div class="newsModule" v-for="(el,index) in newsList" :key="index" v-if="index == 3">
                 <p class="newsModuleTitle">{{ el.title }}</p>
                 <div class="newsModuleImg"><img v-bind:src="el.coverImageUrl"></div>

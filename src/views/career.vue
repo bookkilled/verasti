@@ -22,7 +22,9 @@
           <p class="wow fadeInLeft" data-wow-delay=".5s">VERASTI值得您信赖</p>
       </div>
     </div>
-     <div class="arrow-down"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.5 17.7"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-miterlimit="10" d="M30.6 1L15.8 15.9.9.9"/></svg></div> 
+     <div class="arrow-down">
+       <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.5 17.7"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-miterlimit="10" d="M30.6 1L15.8 15.9.9.9"/></svg> -->
+       </div> 
   </section>
 	<section class="p-tb-110 culture">
     <div class="container">

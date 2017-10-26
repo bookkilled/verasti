@@ -17,7 +17,7 @@
 				<li v-bind:class="{'active': navhome == 'solution'}"><router-link to="/solution"><span>产品</span></router-link></li>
 				<li v-bind:class="{'active': navhome == 'news'}"><router-link to="/news"><span>大事记</span></router-link></li>
 				<li v-bind:class="{'active': navhome == 'partner'}"><router-link to="/partner"><span>合作伙伴</span></router-link></li>
-				<li v-bind:class="{'active': navhome == 'culture'}"><router-link to="/culture"><span>企业文化</span></router-link></li>
+				<li v-bind:class="{'active': navhome == 'career'}"><router-link to="/culture"><span>企业文化</span></router-link></li>
 				<li v-bind:class="{'active': navhome == 'contact'}"><router-link to="/contact"><span>关于我们</span></router-link></li>
 			</ul>
 		</nav>

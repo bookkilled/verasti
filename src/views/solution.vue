@@ -74,7 +74,9 @@
           <p class="wow fadeInLeft" data-wow-delay=".5s">对专业的交易型私募基金来说，<br class="hidden-xs"> 在VERASTI以前，并没有一个统一高效的，安全可信的方式接入证券期货公司。 </p>
         </div>
       </div>
-      <div class="arrow-down"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.5 17.7"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-miterlimit="10" d="M30.6 1L15.8 15.9.9.9"/></svg></div> 
+      <div class="arrow-down">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.5 17.7"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-miterlimit="10" d="M30.6 1L15.8 15.9.9.9"/></svg> -->
+      </div> 
   </section>
   <section class="p-tb-110 products">
     <div class="container">
