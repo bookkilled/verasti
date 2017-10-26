@@ -82,7 +82,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-md-8 col-lg-7 content">
-            <h3 class="wow fadeInLeft txt-white oneline" data-wow-delay=".2s">统一风控</h3>
+            <h3 class="wow fadeInLeft txt-white oneline" data-wow-delay=".3s">统一风控</h3>
             <p class="wow fadeInLeft" data-wow-delay=".4s">统一风控系统部署在策略程序和柜台系统之间。易用、快速、安全、实时管理拦截各种异常交易情况，定义了包括接入控制、流量控制、异常大单、乌龙指等多类事前风控规则。</p>
             <p class="wow fadeInLeft" data-wow-delay=".4s">低延迟，系统处理平均延迟40us，最快处理延迟10us；可视化运维；支持多节点多模块部署，支持模块无缝热插拔。</p>
         </div>
@@ -123,7 +123,7 @@
   </section>
 	<section class="p-tb-110 middleware">
     <div class="container">
-      <h1 class="title text-center wow fadeInUp" data-wow-delay=".2s">Technologies</h1>
+      <h1 class="title text-center wow fadeInUp" data-wow-delay=".3s">Technologies</h1>
       <!-- <p class="brief m-lr-10p mrg-b-50 text-center wow fadeInUp" data-wow-delay=".4s">
       VERASTI消息中间件是面向分布式应用的消息队列中间件。支持TCP/IP,UDP,进程间通讯，广播等多种通讯协议。实现消息在不同的网络协议，不同的应用程序之间传递。特点： 多消息协议：支持TCP/IP,UDP,进程间通讯，广播等协议，提供点对点、发布订阅、广播等多种通讯方式;数据路由：根据内容、功能路由消息，支持事务处理；负载均衡：组件多节点的系统集群；集成管理和监控：集成、可视化的运维监控授权加密：提供完善的安全控制机制 。</p> -->
       <div class="text-center wow fadeInUp" data-wow-delay=".6s"><div class="caption solution-t2">Key Elements<small><span class="text-center">要素</span></small></div></div>
@@ -143,7 +143,7 @@
   </section>
   <section class="p-tb-110 system">
     <div class="container">
-      <h1 class="title text-center wow fadeInUp" data-wow-delay=".2s">Infrastructure</h1>
+      <h1 class="title text-center wow fadeInUp" data-wow-delay=".3s">Infrastructure</h1>
       <!-- <p class="brief m-lr-10p mrg-b-50 text-center wow fadeInUp" data-wow-delay=".4s">VERASTI消息中间件的系统逻辑结构：多层架构，灵活部署：DB+应用服务器+消息中间件，应用服务可横向扩展；跨平台：支持多种数据库，windows+linux ；高效：风控系统来回穿透系统时间小于40us，行情系统采用高效的内存数据库。</p> -->
       <div class="text-center wow fadeInUp" data-wow-delay=".5s"><div class="caption solution-t2">Key Elements<small><span class="text-center">要素</span></small></div></div>
       <div class="m-lr-10p features">

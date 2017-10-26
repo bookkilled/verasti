@@ -16,7 +16,7 @@
 	<section class="banner career">
     <div class="fullpage">
       <div class="bg banner-career"></div>
-      <!-- <div class="bg banner-career-2 wow fadeIn" data-wow-delay=".2s"></div> -->
+      <!-- <div class="bg banner-career-2 wow fadeIn" data-wow-delay=".3s"></div> -->
       <div class="intro text-center">
           <h1 class="wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="1.5s">EVERYONE MATTERS</h1>
           <p class="wow fadeInLeft" data-wow-delay=".5s">VERASTI值得您信赖</p>
@@ -28,7 +28,7 @@
   </section>
 	<section class="p-tb-110 culture">
     <div class="container">
-      <h1 class="title text-center wow fadeInUp" data-wow-delay=".2s">Culture</h1>
+      <h1 class="title text-center wow fadeInUp" data-wow-delay=".3s">Culture</h1>
       <p class="mrg-b-50 text-center wow fadeInUp" data-wow-delay=".4s">VERASTI将成为专业领域的领军者</p>
       <img class="img-responsive center-block mrg-b-100 wow fadeInUp" data-wow-delay=".6s" src="static/img/career_img.jpg">
       <div class="leaders">
@@ -54,7 +54,7 @@ Share best practices and standardise knowledge.</p></div>
   </section>
   <section class="p-tb-110 team-members">
     <div class="container">
-      <h1 class="title text-center wow fadeInUp" data-wow-delay=".2s">Great Team</h1>
+      <h1 class="title text-center wow fadeInUp" data-wow-delay=".3s">Great Team</h1>
       <p class="mrg-b-100 text-center wow fadeInUp" data-wow-delay=".4s">VERASTI是一家面向企业级服务的金融科技初创公司，团队成员均具有丰富的
 金融行业开发经验。<br class="hidden-xs">我们的愿景是在金融行业内构建
 平台级公司。</p>
@@ -75,7 +75,7 @@ Share best practices and standardise knowledge.</p></div>
   </section>
   <section class="p-tb-110 jobs">
     <div class="container">
-      <h1 class="title text-center wow fadeInUp" data-wow-delay=".2s">Current Openings</h1>
+      <h1 class="title text-center wow fadeInUp" data-wow-delay=".3s">Current Openings</h1>
       <div class="job-filter wow fadeInUp" data-wow-delay=".4s">
         <div class="filter-group" data-filter-group="department">
             <a data-filter="*" class="current">不限</a>

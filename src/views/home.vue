@@ -114,7 +114,7 @@
     <section class="newsbox" style="background: #193044" v-else>
         <h1 class="caption txt-purple txtXL wow fadeInLeft" data-wow-delay=".5s">MEMORABILIA<br><small class="txt-white">公司大事记</small>
         </h1>
-        <a v-bind:href="'/newsdetail?pageid='+el.id" class="mitem wow fadeInLeft" data-wow-delay=".2s" v-for="(el,index) in newsList" :key="index">
+        <a v-bind:href="'/newsdetail?pageid='+el.id" class="mitem wow fadeInLeft" data-wow-delay=".3s" v-for="(el,index) in newsList" :key="index">
             <div v-bind:class="['mline',(index == 0 ? 'first' : '')]"></div>
             <span class="mpointer"></span>
             <p class="mdate">{{ el.postDate }}</p>
@@ -168,7 +168,7 @@
             <p><span class="ctel">0571-81999811</span><span class="cemail">nuoee@nuoee.com</span></p>
             <p class="mt10"><span class="caddress">上海市，威海路696弄 | 杭州，江干区庆春东路西子国际C座2402室</span></p>
           </div>
-          <div class="cinfom wow fadeInLeft" data-wow-delay=".2s" v-else>
+          <div class="cinfom wow fadeInLeft" data-wow-delay=".3s" v-else>
             <p><span class="ctel">0571-81999811</span></p>
             <p><span class="cemail">nuoee@nuoee.com</span></p>
             <p><span class="caddress">上海市，威海路696弄 | 杭州，江干区庆春东路西子国际C座2402室</span></p>
