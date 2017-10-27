@@ -72,8 +72,8 @@ header .logo a:hover svg path{
 }
 .navbar-toggle{
 	position: absolute;
-    top: 6px;
-    right: 30px;
+    top: 12px;
+    right: 10px;
     width: 38px;
     height: 38px;
 	display: block;
@@ -1918,6 +1918,9 @@ section .title{
 	    display: none;
 	    visibility: hidden;
 	} */
+	header {
+		padding-top: 24px;
+	}
 	.bgtxt h1 {font-size: 32px;}
 	.bgtxt p {font-size: 14px;}
 	.newsbg .bgtxt h1 {padding-top: 20px;}

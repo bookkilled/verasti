@@ -133,7 +133,7 @@ export default {
             setTimeout(function(){
               $(".nav-wrap").removeClass("in");
               $('.navbar-toggle').css({
-                'right': '20px'
+                'right': '10px'
               });
             },500);
           } else {
