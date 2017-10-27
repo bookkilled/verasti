@@ -39,7 +39,7 @@ VERASTI作为一家为金融机构提供证券及金融衍生品交易整体解�
       <div style="clear:both"></div>
     </div>
   </section>
-	<section>{{ pageID }}</section>
+	<!-- <section>{{ pageID }}</section> -->
 	<app-footer></app-footer>
   </div>
 </template>
