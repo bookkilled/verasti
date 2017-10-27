@@ -1344,7 +1344,7 @@ section .title{
 }
 .banner.contact{
 	min-height: 100%;
-	min-height: 100vh;
+	height: 100vh;
 	overflow-y:scroll;
 }
 .at-contact .page-title{

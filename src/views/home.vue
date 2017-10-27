@@ -147,7 +147,7 @@
             <div class="compbox clearfix">
               <div class="compitem" v-for="(item,index) in complist" :key="index">
                 <img v-bind:src="'../../static/img/'+item.i+'.png'" width="100%" alt="" />
-                <span>{{ item.name }}</span>
+                <span v-html="(!this.pcsite && item.name == '广州金融控股集团有限公司') ? '广州金融控股<br>集团有限公司' : item.name"></span>
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@ export default {
         {i:'10',name:'国贸·期货'},
         {i:'11',name:'宝城期货'},
         {i:'12',name:'通惠期货有限公司'},
-        {i:'13',name:'广州金融控股集团有限公司'},
+        {i:'13',name: '广州金融控股集团有限公司'},
         {i:'14',name:'信达期货'},
         {i:'15',name:'国联期货'},
         {i:'16',name:'东海期货'}
