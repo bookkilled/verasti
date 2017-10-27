@@ -26,34 +26,34 @@
 	<section class="pimgbox">
     <div class="pimglist bc22405a">
       <div class="row wow fadeInLeft" data-wow-delay=".3s">
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_1.jpg" alt="" /></div>
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_2.jpg" alt="" /></div>
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_3.jpg" alt="" /></div>
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_4.jpg" alt="" /></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_1.jpg" alt="" /><span>东海证券</span></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_2.jpg" alt="" /><span>国联证券</span></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_3.jpg" alt="" /><span>联储证券</span></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_4.jpg" alt="" /><span>申银万国期货</span></div>
       </div>
     </div>
     <div class="pimglist bc203b54">
       <div class="row wow fadeInLeft" data-wow-delay=".3s">
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_5.jpg" alt="" /></div>
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_6.jpg" alt="" /></div>
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_7.jpg" alt="" /></div>
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_8.jpg" alt="" /></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_5.jpg" alt="" /><span>华泰证券</span></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_6.jpg" alt="" /><span>信达证券</span></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_7.jpg" alt="" /><span>财通证券</span></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_8.jpg" alt="" /><span>华泰期货</span></div>
       </div>
     </div>
     <div class="pimglist bc22405a">
       <div class="row wow fadeInLeft" data-wow-delay=".3s">
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_9.jpg" alt="" /></div>
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_10.jpg" alt="" /></div>
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_11.jpg" alt="" /></div>
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_12.jpg" alt="" /></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_9.jpg" alt="" /><span>中融汇信</span></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_10.jpg" alt="" /><span>国贸·期货</span></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_11.jpg" alt="" /><span>宝城期货</span></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_12.jpg" alt="" /><span>通惠期货有限公司</span></div>
       </div>
     </div>
     <div class="pimglist bc203b54">
       <div class="row wow fadeInLeft" data-wow-delay=".3s">
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_13.jpg" alt="" /></div>
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_14.jpg" alt="" /></div>
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_15.jpg" alt="" /></div>
-          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_16.jpg" alt="" /></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_13.jpg" alt="" /><span>广州金融控股集团有限公司</span></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_14.jpg" alt="" /><span>信达期货</span></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_15.jpg" alt="" /><span>国联期货</span></div>
+          <div class="col-xs-6 col-sm-3"><img src="../../static/img/partner_img_16.jpg" alt="" /><span>东海期货</span></div>
       </div>
     </div>
   </section>

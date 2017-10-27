@@ -29,7 +29,7 @@
               <li v-bind:class="{'active': navhome == 'solution'}"><router-link to="/solution" class="appsolution"><span>产品</span></router-link></li>
               <li v-bind:class="{'active': navhome == 'news'}"><router-link to="/news" class="appnews"><span>大事记</span></router-link></li>
               <li v-bind:class="{'active': navhome == 'partner'}"><router-link to="/partner" class="apppartner"><span>合作伙伴</span></router-link></li>
-              <li v-bind:class="{'active': navhome == 'career'}"><router-link to="/culture" class="appculture"><span>企业文化</span></router-link></li>
+              <li v-bind:class="{'active': navhome == 'culture'}"><router-link to="/culture" class="appculture"><span>企业文化</span></router-link></li>
               <li v-bind:class="{'active': navhome == 'contact'}"><router-link to="/contact" class="appcontact"><span>关于我们</span></router-link></li>
             </ul>
           </div>
@@ -129,10 +129,19 @@ export default {
       $('.navbar-toggle').on('click',function(e){
           // console.log('12323');
           e.stopPropagation(); 
-          $(".nav-wrap").addClass("in");
-          $(this).css({
-            'right': '74%'
-          });
+          if($(".nav-wrap").hasClass('in')) {
+            setTimeout(function(){
+              $(".nav-wrap").removeClass("in");
+              $('.navbar-toggle').css({
+                'right': '20px'
+              });
+            },500);
+          } else {
+            $(".nav-wrap").addClass("in");
+              $(this).css({
+                'right': '74%'
+            });
+          }
       });
       var path = this.$route.path;
       $(".nav-wrap").click(function(e){
