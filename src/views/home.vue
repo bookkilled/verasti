@@ -23,7 +23,7 @@
           <div class="swiper-container" id="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="(dk,index) in bannerList" :key="index">
-                <video playsinline loop muted autoplay class="bg_video" v-if="dk.coverImageUrl.indexOf('mp4')>-1">
+                <video playsinline loop muted autoplay class="bg_video" v-if="dk.coverImageUrl.indexOf('mp4')>-1"  poster="../../static/img/banner_home.jpg">
                   <source v-bind:src="dk.coverImageUrl" type="video/mp4">
                  </video>
                  <div class="bg_img" v-else>
