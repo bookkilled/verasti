@@ -9,7 +9,7 @@ var DEV_ENV = process.env.DEV_ENV || ''
 // var domain = (DEV_ENV === 'production')
 // 	? `${location.protocol}//admin.verasti.com`
 //   : `${location.protocol}//116.62.165.234`
-var domain = location.protocol+'//116.62.165.234';
+var domain = location.protocol+'//admin.verasti.com';
 // var domain = ( DEV_ENV.replace(/\s/g,"") === 'production')
 // 	? `http://devwww.ineleadbank.com.cn`
 //   : `http://devwww.ineleadbank.com.cn`

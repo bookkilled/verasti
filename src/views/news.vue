@@ -102,9 +102,12 @@ export default {
                 id: data.list[i].id
             });
         }
-        if(data.list.length < data.pageInfo.pageSize) {
+        if (data.pageInfo.pageNo == data.pageInfo.totalPage) {
             vm.liststips = '没有更多了'
         }
+        // if(data.list.length < data.pageInfo.pageSize) {
+        //     vm.liststips = '没有更多了'
+        // }
     },function (err) {
         // vm.errstate = true
         // vm.errmsg = '接口请求异常！'
@@ -132,9 +135,12 @@ export default {
                     id: data.list[i].id
                 });
             }
-            if(data.list.length < data.pageInfo.pageSize) {
+            if (data.pageInfo.pageNo == data.pageInfo.totalPage) {
                 _.liststips = '没有更多了'
             }
+            // if(data.list.length < data.pageInfo.pageSize) {
+            //     _.liststips = '没有更多了'
+            // }
             console.log(_.totalList.length,_.totalnum );
         },function (err) {
             // vm.errstate = true
